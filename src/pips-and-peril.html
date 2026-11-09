@@ -1,0 +1,188 @@
+<!--title: Pips & Peril-->
+<!--desc: Pips & Peril, a retro dice roguelike by Tyler Wedderburn, made in Godot 4.3.-->
+<!--body: page-pips-->
+<!--fonts: pips-->
+<header class="wrap">@@NAV@@</header>
+<nav class="rail" aria-label="Sections on this page" data-rail>
+  <a href="#pp-head" aria-label="Title">Title</a>
+  <a href="#turn" aria-label="One turn">One turn</a>
+  <a href="#try" aria-label="Try a roll">Try a roll</a>
+  <a href="#stances" aria-label="Stances">Stances</a>
+  <a href="#castles-head" aria-label="Castles">Castles</a>
+  <a href="#heroes" aria-label="Heroes">Heroes</a>
+  <a href="#match" aria-label="Matching dice">Matching dice</a>
+  <a href="#made" aria-label="How it was made">How it was made</a>
+</nav>
+<main id="main">
+  <section class="p-hero" aria-labelledby="pp-head" data-loop>
+    <div class="pan"><img src="img/pips-title.png" width="640" height="360" alt="" fetchpriority="high"></div>
+    <div class="pips-scrim" aria-hidden="true"></div>
+    <div class="wrap p-hero__inner">
+      <h1 id="pp-head">Pips &amp; Peril</h1>
+      <p class="lede">A dice roguelike. Roll, hold and reroll your way past three kings.</p>
+      <div class="actions">
+        <a class="btn" href="https://github.com/Twedderburn/Pips-and-Peril">View on GitHub</a>
+        <a class="btn btn--quiet" href="#castles">See the castles</a>
+      </div>
+    </div>
+    <button class="loop-toggle" type="button" data-loop-toggle>Pause</button>
+  </section>
+
+  <section class="section" aria-labelledby="turn">
+    <div class="wrap split">
+      <div>
+        <h2 class="head" id="turn">One turn, five moves.</h2>
+        <ol class="steps">
+          <li><span><b>Pick a stance:</b> attack, brace or focus.</span></li>
+          <li><span><b>Roll</b> your damage dice and the D4 modifier.</span></li>
+          <li><span><b>Hold</b> the dice you like and reroll the rest.</span></li>
+          <li><span><b>Tap a target.</b> Pairs and triples add damage and coins.</span></li>
+          <li><span><b>Defend</b> on their turn: every pip blocks 10%.</span></li>
+        </ol>
+      </div>
+      <figure class="shot">
+        <img src="img/shots/treasury-roll.png" width="640" height="360" alt="A roll of 11 times 1.5 for 17 damage against three living coins" loading="lazy">
+        <figcaption class="caption">A 17 point roll in the Coin Treasury.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section band-plum" aria-labelledby="try">
+    <div class="wrap split">
+      <div>
+        <h2 class="head" id="try">Try a roll.</h2>
+        <p>Two d6 and the D4 modifier. Tap a die to hold it, then reroll once. A pair adds 3 before the modifier.</p>
+      </div>
+      <div class="roller" data-roller>
+        <div class="roller__dice">
+          <button type="button" class="die" aria-pressed="false" data-die aria-label="First d6, not held">
+            <span class="die__face" data-face="6"></span>
+          </button>
+          <button type="button" class="die" aria-pressed="false" data-die aria-label="Second d6, not held">
+            <span class="die__face" data-face="6"></span>
+          </button>
+          <span class="die die--mod" data-mod aria-label="D4 modifier">x1</span>
+        </div>
+        <p class="roller__sum" data-sum aria-live="polite">Press Roll to throw the dice.</p>
+        <div class="actions">
+          <button type="button" class="btn" data-roll>Roll</button>
+          <button type="button" class="btn btn--quiet" data-reroll disabled>Reroll</button>
+        </div>
+        <p class="caption">A simplified version of the game’s first roll, in the browser.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="stances">
+    <div class="wrap">
+      <h2 class="head" id="stances">Three stances before every roll.</h2>
+      <dl class="rows">
+        <div><dt>Attack</dt><dd>A normal hit.</dd></div>
+        <div><dt>Brace</dt><dd>Your hit is 30% weaker and can’t crit, but your next defence roll gets one extra pip.</dd></div>
+        <div><dt>Focus</dt><dd>Skip the attack and bank a reroll for later. You can hold two, and they carry into later fights.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section band-plum" id="castles" aria-labelledby="castles-head">
+    <div class="wrap">
+      <h2 class="head" id="castles-head">Three castles, three kings.</h2>
+      <div class="switch" data-switch>
+        <div class="switch__tabs" role="tablist" aria-label="Castles">
+          <button type="button" role="tab" id="t-coins" aria-controls="p-coins" aria-selected="true">Coin Treasury</button>
+          <button type="button" role="tab" id="t-cards" aria-controls="p-cards" aria-selected="false" tabindex="-1">House of Cards</button>
+          <button type="button" role="tab" id="t-jacks" aria-controls="p-jacks" aria-selected="false" tabindex="-1">Jackstone Keep</button>
+        </div>
+        <div class="panel split--flip split" role="tabpanel" id="p-coins" aria-labelledby="t-coins">
+          <figure class="shot"><img src="img/shots/treasury-ko.png" width="640" height="360" alt="A coin knocked out in the Coin Treasury" loading="lazy"></figure>
+          <div>
+            <h3>The Gold King’s coins</h3>
+            <ul>
+              <li>Up to three living coins a round.</li>
+              <li>Each turn a coin attacks or flips.</li>
+              <li>Heads hits harder; tails blocks more of your damage.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel split--flip split" role="tabpanel" id="p-cards" aria-labelledby="t-cards" hidden>
+          <figure class="shot"><img src="img/shots/cards-incoming.png" width="640" height="360" alt="A stacked king of cards and his workers, 36 damage incoming" loading="lazy"></figure>
+          <div>
+            <h3>The King of Cards</h3>
+            <ul>
+              <li>A card’s value, ace to king, sets its health and attack.</li>
+              <li>Any two cards can stack into one bigger card.</li>
+              <li>The king summons low cards to help.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel split--flip split" role="tabpanel" id="p-jacks" aria-labelledby="t-jacks" hidden>
+          <figure class="shot"><img src="img/shots/jacks-block.png" width="640" height="360" alt="A 90% block against a Jackstone in the Jackstone Keep" loading="lazy"></figure>
+          <div>
+            <h3>The Jack King</h3>
+            <ul>
+              <li>One enemy that switches between two stances.</li>
+              <li>Bounce blocks your hit; grab hits back.</li>
+              <li>Roll two crits to knock its jacks loose.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="heroes">
+    <div class="wrap split">
+      <div>
+        <h2 class="head" id="heroes">Four heroes, four sets of dice.</h2>
+        <table class="table">
+          <thead><tr><th scope="col">Hero</th><th scope="col">Dice</th><th scope="col">Health</th></tr></thead>
+          <tbody>
+            <tr><td>The Hero</td><td>Two d6</td><td class="num">60</td></tr>
+            <tr><td>The Knight</td><td>Guard die and a d6</td><td class="num">62</td></tr>
+            <tr><td>The Vampire</td><td>Leech die and a d6</td><td class="num">34</td></tr>
+            <tr><td>The Twins</td><td>Twin die and a d6</td><td class="num">55</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <figure class="shot">
+        <img src="img/shots/select.png" width="640" height="360" alt="The hero select screen, showing The Hero, his dice and his stats" loading="lazy">
+        <figcaption class="caption">Beat a king to open the next hero.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section band-plum" aria-labelledby="match">
+    <div class="wrap split">
+      <figure class="shot">
+        <img src="img/shots/treasury-block.png" width="640" height="360" alt="Ten pips block a coin's attack completely: 100%" loading="lazy">
+        <figcaption class="caption">Ten pips, a full block.</figcaption>
+      </figure>
+      <div>
+        <h2 class="head" id="match">Matching dice pay out.</h2>
+        <table class="table">
+          <thead><tr><th scope="col">Roll</th><th scope="col">Damage</th><th scope="col">Coins</th></tr></thead>
+          <tbody>
+            <tr><td>Pair</td><td class="num">+3</td><td class="num">+2</td></tr>
+            <tr><td>Two pair</td><td class="num">+6</td><td class="num">+4</td></tr>
+            <tr><td>Triple</td><td class="num">+8</td><td class="num">+5</td></tr>
+            <tr><td>Four of a kind</td><td class="num">+20</td><td class="num">+12</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="made">
+    <div class="wrap">
+      <h2 class="head" id="made">Made in Godot, scored in chiptune.</h2>
+      <dl class="rows">
+        <div><dt>Engine</dt><dd>Godot 4.3, with a balance simulator that plays hundreds of runs to test every change.</dd></div>
+        <div><dt>Art</dt><dd>Generated with ElevenLabs image models, then cut down to a 16-bit palette with custom Python tools.</dd></div>
+        <div><dt>Sound</dt><dd>Original chiptune music and effects, synthesised by a script written for the game.</dd></div>
+        <div><dt>Plays on</dt><dd>Android, Windows and Steam Deck, with touch or a controller.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <nav class="wrap next" aria-label="Next project"><a href="focus-home.html"><span>Next project</span><b>Focus Home</b></a></nav>
+</main>

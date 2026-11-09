@@ -1,0 +1,142 @@
+<!--title: Focus Home-->
+<!--desc: Focus Home, an Android launcher by Tyler Wedderburn that opens only your favorite apps until you scan a QR key you hid. Public release 1.6; dev build 1.7.-->
+<!--body: page-focus-->
+<!--fonts: focus-->
+<header class="wrap">@@NAV@@</header>
+<nav class="subnav" aria-label="Focus Home sections">
+  <div class="wrap subnav__in">
+    <a class="subnav__name" href="#fh-head">Focus Home</a>
+    <ul class="subnav__links">
+      <li><a href="#highlights">Highlights</a></li>
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#versions">Versions</a></li>
+      <li><a href="#specs">Specs</a></li>
+    </ul>
+    <a class="pill" href="https://github.com/Twedderburn/focushome">Get 1.6</a>
+  </div>
+</nav>
+<main id="main">
+  <section class="ap-hero" aria-labelledby="fh-head">
+    <div class="wrap ap-hero__text">
+      <a class="build-tag" href="#versions">Public release 1.6, dev build 1.7</a>
+      <h1 id="fh-head">Focus Home</h1>
+      <p class="ap-sub">Your phone, cut down to the apps you chose.</p>
+      <div class="ap-links">
+        <a class="pill pill--lg" href="https://github.com/Twedderburn/focushome">Get the public release</a>
+        <a class="ap-link" href="#how">See how a day goes</a>
+      </div>
+    </div>
+    <div class="ap-fan">
+      <div class="phone__shot ap-fan__side" data-slot="fh-fan-1" data-kind="product" data-alt="Focus Home screenshot" style="--i: 1"><img src="img/fh/focus-mode.png" width="540" height="1080" alt="Focus mode: the clock, focus time and favorites" fetchpriority="high"></div>
+      <div class="phone__shot ap-fan__main" data-slot="fh-fan-2" data-kind="product" data-alt="Focus Home screenshot" style="--i: 0"><img src="img/fh/home-walnut.png" width="540" height="1080" alt="The home screen in Walnut with the Sage accent: date, large clock, an Unlocked pill and a grid of favorites with a folder" fetchpriority="high"></div>
+      <div class="phone__shot ap-fan__side" data-slot="fh-fan-3" data-kind="product" data-alt="Focus Home screenshot" style="--i: 2"><img src="img/fh/drawer.png" width="540" height="1080" alt="The All apps drawer with a search box" fetchpriority="high"></div>
+    </div>
+  </section>
+
+  <section class="ap-light" id="highlights" aria-labelledby="hl">
+    <div class="wrap">
+      <h2 class="ap-h2" id="hl">Get the highlights.</h2>
+      <div class="bento">
+        <article class="b b--wide">
+          <h3>Five backgrounds. Seven accents.</h3>
+          <p>One accent colours the clock, the buttons and every highlight.</p>
+          <div class="b__pic" data-slot="fh-b-1" data-kind="product" data-alt="Focus Home screenshot"><img src="img/fh/colours.png" width="540" height="1080" alt="Settings with background swatches and accent colours" loading="lazy"></div>
+        </article>
+        <article class="b b--tall">
+          <h3>Folders, by feel.</h3>
+          <p>Drop one app on another.</p>
+          <div class="b__pic" data-slot="fh-b-2" data-kind="product" data-alt="Focus Home screenshot"><img src="img/fh/folder.png" width="540" height="1080" alt="A folder holding Clock and Calendar" loading="lazy"></div>
+        </article>
+        <article class="b b--stat">
+          <span class="b__big">15 min</span>
+          <p>The first lost-key wait of the day. Then 30, then 60.</p>
+        </article>
+        <article class="b b--stat" id="key">
+          <span class="b__big">SHA-256</span>
+          <p>The only trace of your key the phone keeps. Only a live scan counts.</p>
+        </article>
+        <article class="b b--wide b--dark">
+          <h3>A tour that points at the real screen.</h3>
+          <p>Right after setup, step by step. Replay it any time.</p>
+          <div class="b__pic" data-slot="fh-b-3" data-kind="product" data-alt="Focus Home screenshot"><img src="img/fh/tour.png" width="540" height="1080" alt="A tour step spotlighting the favorites grid" loading="lazy"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ap-story" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <h2 class="ap-h2" id="how-h">How a day goes.</h2>
+      <div class="story" data-story>
+        <div class="story__phone">
+          <div class="phone__shot" data-slot="fh-story" data-kind="product" data-alt="Focus Home screenshot">
+            <img class="is-on" data-step-img="0" src="img/fh/focus-mode.png" width="540" height="1080" alt="Focus mode, for the step Morning: focus mode">
+            <img data-step-img="1" src="img/fh/drawer.png" width="540" height="1080" alt="The All apps drawer, for the step Scan the key you hid">
+            <img data-step-img="2" src="img/fh/home-mocha.png" width="540" height="1080" alt="The home screen in Mocha, for the step Thirty minutes later">
+            <img data-step-img="3" src="img/fh/emergency.png" width="540" height="1080" alt="The lost key countdown, for the step Lost the key?">
+          </div>
+        </div>
+        <ol class="story__steps">
+          <li data-shot="img/fh/focus-mode.png">
+            <h3>Morning: focus mode.</h3>
+            <p>Only your favorites open. Everything else waits.</p>
+            <div class="phone__shot story__inline" data-slot="fh-s-1" data-kind="product" data-alt="Focus Home screenshot"><img src="img/fh/focus-mode.png" width="540" height="1080" alt="Focus mode" loading="lazy"></div>
+          </li>
+          <li data-shot="img/fh/drawer.png">
+            <h3>Scan the key you hid.</h3>
+            <p>Every app comes back, one swipe left.</p>
+            <div class="phone__shot story__inline" data-slot="fh-s-2" data-kind="product" data-alt="Focus Home screenshot"><img src="img/fh/drawer.png" width="540" height="1080" alt="The All apps drawer" loading="lazy"></div>
+          </li>
+          <li data-shot="img/fh/home-mocha.png">
+            <h3>Thirty minutes later.</h3>
+            <p>Focus mode comes back on its own. Changing the clock does nothing.</p>
+            <div class="phone__shot story__inline" data-slot="fh-s-3" data-kind="product" data-alt="Focus Home screenshot"><img src="img/fh/home-mocha.png" width="540" height="1080" alt="The home screen in Mocha" loading="lazy"></div>
+          </li>
+          <li data-shot="img/fh/emergency.png">
+            <h3>Lost the key?</h3>
+            <p>Sit out fifteen minutes on this screen. Leave, and it starts over.</p>
+            <div class="phone__shot story__inline" data-slot="fh-s-4" data-kind="product" data-alt="Focus Home screenshot"><img src="img/fh/emergency.png" width="540" height="1080" alt="The lost key countdown" loading="lazy"></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="ap-light" id="versions" aria-labelledby="ver-h">
+    <div class="wrap">
+      <h2 class="ap-h2 ap-center" id="ver-h">Which version is which?</h2>
+      <table class="compare">
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col"><span class="compare__num">1.6</span><span class="compare__name">Public release</span><a class="ap-link" href="https://github.com/Twedderburn/focushome">GitHub</a></th>
+            <th scope="col"><span class="compare__num">1.7</span><span class="compare__name">Dev build, in testing</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Themes and accents</th><td>@@TICK@@</td><td>@@TICK@@</td></tr>
+          <tr><th scope="row">Icons, folders and the drawer</th><td>@@TICK@@</td><td>@@TICK@@</td></tr>
+          <tr><th scope="row">QR key, auto-relock, lost-key wait</th><td>@@TICK@@</td><td>@@TICK@@</td></tr>
+          <tr><th scope="row">First-run tour</th><td>@@TICK@@</td><td>@@TICK@@</td></tr>
+          <tr><th scope="row">Swipe-right dashboard</th><td><span class="no">No</span></td><td>@@TICK@@</td></tr>
+          <tr><th scope="row">Add and edit to-dos</th><td><span class="no">No</span></td><td>@@TICK@@</td></tr>
+        </tbody>
+      </table>
+      <p class="caption ap-center">Screenshots on this page were captured from 1.7; every screen shown is also in 1.6.</p>
+    </div>
+  </section>
+
+  <section class="section" id="specs" aria-labelledby="specs-h">
+    <div class="wrap">
+      <h2 class="ap-h2" id="specs-h">Tech specs.</h2>
+      <dl class="rows">
+        <div><dt>Runs on</dt><dd>Android 10 and later. Built and tested on a Galaxy S25.</dd></div>
+        <div><dt>Built with</dt><dd>Kotlin, Jetpack Compose and Material 3.</dd></div>
+        <div><dt>Key</dt><dd>Any QR code, scanned live with Google’s code scanner. No camera permission.</dd></div>
+        <div><dt>Auto-relock</dt><dd>Off, 15 minutes, 30 minutes, 1 hour or 2 hours.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <nav class="wrap next" aria-label="Next project"><a href="pips-and-peril.html"><span>Next project</span><b>Pips &amp; Peril</b></a></nav>
+</main>
