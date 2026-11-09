@@ -440,4 +440,35 @@ html:not(.js) .demo__controls { display: none; }
   .table { font-size: var(--text-md); }
   .shots { grid-template-columns: minmax(0, 1fr); }
   .giant { margin-top: var(--space-lg); }
+
+  /* Pips & Peril: one swipeable row of castle tabs, dice that fit a 320px screen */
+  .switch__tabs { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(-1 * var(--gutter)); padding: var(--space-3xs) var(--gutter); scrollbar-width: none; overscroll-behavior-x: contain; }
+  .switch__tabs::-webkit-scrollbar { display: none; }
+  .switch__tabs button { flex: 0 0 auto; }
+  .die { width: 80px; height: 80px; }
+  .die__face { width: 54px; height: 54px; }
+  .die__face i { width: 10px; height: 10px; }
+
+  /* Focus Home: one centred phone in the hero, cropped by the section edge */
+  .ap-fan { height: 400px; }
+  .ap-fan__side { display: none; }
+  .ap-fan__main { width: min(240px, 64vw); }
+  .b--stat { min-height: 0; padding-block: var(--space-xl); }
+  .b--wide, .b--tall, .b--dark { min-height: 480px; }
+  .b--tall .b__pic > img { object-position: 50% 62%; }
+  .story__inline { width: min(220px, 62vw); }
+  .compare { font-size: var(--text-md); }
+  .compare thead th { padding-inline: var(--space-xs); }
+  .compare tbody th { width: 46%; padding-right: var(--space-sm); }
+  .compare tbody td { padding-inline: var(--space-xs); }
+}
+
+/* Touch screens: every link and control is at least 44px tall, so thumbs land where they aim */
+@media (pointer: coarse), (max-width: 60rem) {
+  .wordmark, .nav__links a, .nav__mail, .subnav__name, .ap-link, .text-link, .footer a, .next a span, .skip { display: inline-flex; align-items: center; min-height: 44px; }
+  .footer a { min-width: 44px; }
+  .build-tag { min-height: 44px; }
+  .nav__links { gap: var(--space-md); }
+  .footer ul { gap: 0; }
+  .footer__note { margin-top: var(--space-md); }
 }
