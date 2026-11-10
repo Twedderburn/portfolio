@@ -1,5 +1,5 @@
 /* Hallmark · shape: a four-page site, a home that says who Tyler is, a tiled projects index, one full page per project · genre: editorial · theme: custom · job: hire · idea: "A military cook's off-shift work, each project shown in its own world inside his green and wood frame" · vibe: "forest green, walnut, bold type, worlds inside"
- * paper: oklch(17% 0.022 150) · accent: oklch(72% 0.14 144) · display: League Spartan 800 (home adds an EB Garamond italic line; Pixelify Sans on Pips & Peril; Hanken Grotesk heads on Focus Home; each page loads three families at most) · body: Hanken Grotesk · hero: a spec sheet of four facts, an off shift / on shift switch that repaints the hero green or walnut, a serif line with a game screenshot set inline, and the name set so its baseline sits on the hero's bottom edge · nav: wordmark, the three pages by name, the email at the far edge, one shared header on every page · footer: one band, name and place, page links, email, picture note · imagery: Pips & Peril screenshots 8 (Godot autopilot capture), game art (user's own), Focus Home screens built in HTML (no screenshots yet), portrait slot waiting · signature: the off shift / on shift switch on the home hero; per page a different style (spec-sheet editorial home, collage projects canvas, arcade Pips page with a pixel rail and a dice roller, austere Focus page with a scan demo)
+ * paper: oklch(17% 0.022 150) · accent: oklch(72% 0.14 144) · display: League Spartan 800 (home adds an EB Garamond italic line; Pixelify Sans on Pips & Peril; Hanken Grotesk heads on Focus Home; each page loads three families at most) · body: Hanken Grotesk · hero: an off shift / on shift switch that repaints the hero green or walnut, a serif line with a game screenshot set inline, and the name set so its baseline sits on the hero's bottom edge · nav: wordmark, the three pages by name, the email at the far edge, one shared header on every page · footer: one band, name and place, page links, email, picture note · imagery: Pips & Peril screenshots 8 (Godot autopilot capture), game art (user's own), Focus Home screens built in HTML (no screenshots yet), portrait slot waiting · signature: the off shift / on shift switch on the home hero; per page a different style (editorial home, collage projects canvas, arcade Pips page with a pixel rail and a dice roller, austere Focus page with a scan demo)
  * axes: dark/display-heavy/chromatic-green · posture: full palette (field green, seal walnut, ink, forest paper; project pages swap in their own palettes) · contrast: pass · fold: pass · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H5 E4 S5 R4 V5 · weakest: P, a hobby portfolio can read as a résumé; the home leads with the kitchen-to-keyboard fact and real screens instead of a skills list */
 /* Hallmark · waive 37 · the shared stylesheet names four faces but each page loads three · the home page loads EB Garamond and never Pixelify Sans, the Pips & Peril and projects pages load Pixelify Sans and never EB Garamond */
@@ -50,14 +50,11 @@ body.page-focus { --color-paper: var(--es-walnut); --color-paper-2: var(--es-moc
 .footer__note { margin-top: var(--space-lg); font-size: var(--text-sm); color: var(--color-muted); }
 
 /* ---------- home ---------- */
-/* the home hero: a spec sheet, a side switch, a serif line with a picture in it, the name bleeding off the edge */
+/* the home hero: a side switch, a serif line with a picture in it, the name bleeding off the edge */
 .home-hero { --hero-bg: var(--color-field); --hero-ink: var(--color-field-ink); --hero-btn-ink: var(--color-ink); --hero-hover: var(--color-field-hover); position: relative; overflow: hidden; background: var(--hero-bg); color: var(--hero-ink); transition: background-color var(--dur-long) var(--ease-in-out), color var(--dur-long) var(--ease-in-out); }
 .home-hero[data-side="on"] { --hero-bg: var(--color-wood); --hero-ink: var(--color-wood-ink); --hero-btn-ink: var(--color-wood); --hero-hover: var(--color-wood-2); }
 .home-hero .nav, .home-hero .wordmark, .home-hero .nav__links a, .home-hero .nav__mail { color: var(--hero-ink); }
 .home-hero :focus-visible { outline-color: var(--hero-ink); }
-.spec { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap-columns); margin: var(--space-lg) 0 0; padding-top: var(--space-md); border-top: 1px solid var(--hero-ink); }
-.spec dt { font-size: var(--text-sm); }
-.spec dd { margin: var(--space-3xs) 0 0; font-weight: 600; }
 .hero-body { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-2xl); align-items: center; }
 .stack { position: relative; height: 400px; margin-top: var(--space-xl); }
 .stack > * { position: absolute; border-radius: var(--radius-card); outline: 2px solid var(--hero-ink); outline-offset: -1px; }
@@ -406,7 +403,6 @@ html:not(.js) .demo__controls { display: none; }
   .about, .split, .split--flip, .onward__link, .tiles, .footer__row, .page-focus .p-hero__inner { grid-template-columns: minmax(0, 1fr); }
   .week__row, .rows > div { grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
   .screens { grid-template-columns: minmax(0, 1fr); }
-  .spec { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-md); }
   .hero-body { grid-template-columns: minmax(0, 1fr); }
   .stack { display: none; }
   .collage { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; }
