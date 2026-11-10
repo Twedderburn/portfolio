@@ -1,86 +1,84 @@
-<!--title: Tyler Wedderburn-->
-<!--desc: Tyler Wedderburn is a military cook in Manitoba who builds games and Android apps off shift.-->
+<!--title: Tyler Wedderburn: games and Android apps-->
+<!--desc: Tyler Wedderburn is a military cook in Manitoba who builds games and Android apps off shift. Download Pips & Peril and Focus Home.-->
 <!--body: page-home-->
 <!--fonts: home-->
+<!--og: img/pips-title.png-->
+<header class="intro">
+  <div class="wrap">
+    @@NAV@@
+    <div class="intro__body">
+      <h1 id="name">Tyler Wedderburn</h1>
+      <p class="intro__line">I’m a military cook in Manitoba. Off shift, I build games and Android apps. Two are out now, and both are free to download.</p>
+    </div>
+  </div>
+</header>
 <main id="main">
-  <section class="home-hero" data-side="off" aria-labelledby="name">
-    <div class="wrap">
-      @@NAV@@
-      <div class="hero-body">
-      <div>
-      <div class="side" role="group" aria-label="Which side of the week">
-        <button type="button" aria-pressed="true" data-side-btn="off">Off shift</button>
-        <button type="button" aria-pressed="false" data-side-btn="on">On shift</button>
+  <div id="projects">
+    <section class="feature world-pips" id="pips" aria-labelledby="f-pips">
+      <div class="wrap feature__in">
+        <div class="feature__text">
+          <p class="feature__kind">Game · Android, Windows, Steam Deck</p>
+          <h2 id="f-pips"><a href="pips-and-peril.html">Pips &amp; Peril</a></h2>
+          <p class="feature__desc">A retro dice roguelike. Pick a hero, roll, hold and reroll, and fight through three castles to topple their kings.</p>
+          <ul class="feature__facts">
+            <li>Four heroes, each with their own dice</li>
+            <li>Three castles, each with its own king</li>
+            <li>Touch, a controller, or mouse and keyboard</li>
+          </ul>
+          <div class="actions" role="group" aria-label="Download Pips &amp; Peril 1.0.0" data-os-group>
+            <a class="btn btn--get" data-os="android" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril_1.apk">Android <span>49 MB</span></a>
+            <a class="btn btn--get" data-os="windows" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril-Windows.zip">Windows <span>33 MB</span></a>
+            <a class="btn btn--get" data-os="linux" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril-SteamDeck_1.zip">Steam Deck <span>27 MB</span></a>
+          </div>
+          <p class="feature__note">Version 1.0.0. The buttons download straight from GitHub.</p>
+          <a class="more" href="pips-and-peril.html">See how it plays</a>
+        </div>
+        <a class="feature__media media-pips" href="pips-and-peril.html" aria-label="Pips &amp; Peril: see how it plays">
+          <img src="img/pips-title.png" width="640" height="360" alt="Pips &amp; Peril title art: four heroes on a ridge facing three castles" fetchpriority="high">
+          <img src="img/shots/treasury-roll.png" width="640" height="360" alt="Gameplay: a roll of 17 against three living coins in the Coin Treasury" loading="lazy">
+          <img src="img/shots/cards-stack.png" width="640" height="360" alt="Gameplay: two cards stack into a king in the House of Cards" loading="lazy">
+        </a>
       </div>
-      <p class="serif-line" aria-live="polite">
-        <span data-side-text="off">Off shift, I build <img class="chip" src="img/shots/cards-stack.png" width="640" height="360" alt="" fetchpriority="high"> dice games and phones that stay quiet.</span>
-        <span data-side-text="on" hidden>On shift, I cook for the Canadian Armed Forces in Manitoba.</span>
-      </p>
-      <div class="actions">
-        <a class="btn" href="projects.html">See the projects</a>
-        <a class="btn btn--quiet" href="mailto:T1D0@pm.me">Email Tyler</a>
-      </div>
-      </div>
-      <div class="stack" aria-hidden="true">
-        <img class="stack__a" src="img/pips-title.png" width="640" height="360" alt="">
-        <img class="stack__b" src="img/fh/home-walnut.png" width="540" height="1080" alt="">
-        <img class="stack__c" src="img/shots/treasury-roll.png" width="640" height="360" alt="">
-      </div>
-      </div>
-    </div>
-    <h1 class="giant" id="name"><span class="giant__line">Tyler Wedderburn</span></h1>
-  </section>
+    </section>
 
-  <section class="reel-band" aria-label="The work, in motion">
-    <div class="reel" data-reel>
-      <div class="reel__track">
-        <figure class="reel__item"><img src="img/shots/treasury-roll.png" width="640" height="360" alt="Pips &amp; Peril: a roll of 17 against three living coins in the Coin Treasury" loading="lazy"></figure>
-        <figure class="reel__item"><img src="img/shots/cards-incoming.png" width="640" height="360" alt="Pips &amp; Peril: a stacked king of cards with 36 damage incoming" loading="lazy"></figure>
-        <figure class="reel__item reel__item--phone"><img src="img/fh/home-mocha.png" width="540" height="1080" alt="Focus Home: the home screen in the Mocha theme" loading="lazy"></figure>
-        <figure class="reel__item reel__item--phone"><img src="img/fh/drawer.png" width="540" height="1080" alt="Focus Home: the All apps drawer" loading="lazy"></figure>
-        <figure class="reel__item"><img src="img/shots/jacks-hit.png" width="640" height="360" alt="Pips &amp; Peril: a 14 point hit on a Jackstone in the Jackstone Keep" loading="lazy"></figure>
-        <figure class="reel__item"><img src="img/shots/select.png" width="640" height="360" alt="Pips &amp; Peril: the hero select screen" loading="lazy"></figure>
-        <figure class="reel__item"><img src="img/shots/treasury-block.png" width="640" height="360" alt="Pips &amp; Peril: a full 100% block against a coin's attack" loading="lazy"></figure>
-        <figure class="reel__item"><img src="img/shots/jacks-block.png" width="640" height="360" alt="Pips &amp; Peril: a 90% block in the Jackstone Keep" loading="lazy"></figure>
+    <section class="feature feature--flip world-focus" id="focus" aria-labelledby="f-focus">
+      <div class="wrap feature__in">
+        <div class="feature__text">
+          <p class="feature__kind">App · Android 10 and later</p>
+          <h2 id="f-focus"><a href="focus-home.html">Focus Home</a></h2>
+          <p class="feature__desc">A home screen that opens only your favorite apps. To get the rest back, you scan a QR key you hid somewhere inconvenient.</p>
+          <ul class="feature__facts">
+            <li>Only a live scan of your key opens the rest</li>
+            <li>Locks itself again, after 30 minutes by default</li>
+            <li>Five backgrounds and seven accent colours</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn--get" href="https://github.com/Twedderburn/focushomePublic/releases/download/v1.6/FocusHome-1.6.apk">Download for Android <span>2.9 MB</span></a>
+          </div>
+          <p class="feature__note">Public release 1.6, straight from GitHub. <span class="not-android">It only runs on Android, so open this page on your phone to install it.</span></p>
+          <a class="more" href="focus-home.html">See how a day goes</a>
+        </div>
+        <a class="feature__media media-focus" href="focus-home.html" aria-label="Focus Home: see how a day goes">
+          <img src="img/fh/focus-mode.png" width="540" height="1080" alt="Focus mode: the clock, today's focus time and the favorites" loading="lazy">
+          <img src="img/fh/home-walnut.png" width="540" height="1080" alt="The home screen in Walnut with the Sage accent" loading="lazy">
+          <img src="img/fh/drawer.png" width="540" height="1080" alt="The All apps drawer with a search box" loading="lazy">
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <section class="section" aria-labelledby="who">
+  <section class="section about-band" id="about" aria-labelledby="who">
     <div class="wrap about">
+      <div class="portrait" data-slot="portrait" data-alt="A photo of Tyler"><img src="img/tyler.jpg" width="800" height="1000" alt="Tyler smiling in a ball cap, holding a toddler who is drinking from a sippy cup" loading="lazy"></div>
       <div>
-        <div class="portrait" data-slot="portrait" data-alt="A photo of Tyler"></div>
         <h2 class="head" id="who">Kitchen first, then the keyboard.</h2>
-      </div>
-      <div>
-        <p class="say" data-say>I’m Tyler. I cook for the Canadian Armed Forces in Manitoba. Everything here is something I made on my own time: a dice game with three castles to clear, and a phone launcher that keeps me off my phone. My Christian faith runs through all of it.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section week" aria-labelledby="week">
-    <div class="wrap">
-      <h2 class="head" id="week">What fills the week.</h2>
-      <div class="week__rows">
-        <div class="week__row"><span class="week__word">Kitchen</span><p>Cook, Canadian Armed Forces. The day job.</p></div>
-        <a class="week__row" href="pips-and-peril.html"><span class="week__word">Games</span><p>Pips &amp; Peril, a dice roguelike built in Godot 4.3.</p></a>
-        <a class="week__row" href="focus-home.html"><span class="week__word">Apps</span><p>Focus Home, an Android launcher built in Kotlin.</p></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="onward" aria-label="Projects">
-    <div class="wrap">
-      <a class="onward__link" href="projects.html">
-        <div>
-          <span class="onward__word">See the projects</span>
-          <p>Two so far, both made off shift.</p>
+        <p class="say">I’m Tyler. I cook for the Canadian Armed Forces in Manitoba. Everything here is something I made on my own time: a dice game with three castles to clear, and a phone launcher that keeps me off my phone. My Christian faith runs through all of it.</p>
+        <p class="say">Tried one of them? Tell me what you liked and what broke.</p>
+        <div class="actions">
+          <a class="btn" href="mailto:T1D0@pm.me">Email T1D0@pm.me</a>
+          <a class="btn btn--quiet" href="https://github.com/Twedderburn">GitHub</a>
         </div>
-        <div class="onward__tiles">
-          <img src="img/pips-title.png" width="640" height="360" alt="Pips &amp; Peril title art: four heroes facing three castles" loading="lazy">
-          <img class="onward__phone" src="img/fh/focus-mode.png" width="540" height="1080" alt="Focus Home in focus mode" loading="lazy">
-        </div>
-      </a>
+      </div>
     </div>
   </section>
 </main>

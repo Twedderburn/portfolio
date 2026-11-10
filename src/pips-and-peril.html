@@ -1,17 +1,20 @@
-<!--title: Pips & Peril-->
-<!--desc: Pips & Peril, a retro dice roguelike by Tyler Wedderburn, made in Godot 4.3.-->
+<!--title: Pips & Peril, a dice roguelike by Tyler Wedderburn-->
+<!--desc: Pips & Peril is a retro dice roguelike for Android, Windows and Steam Deck, made in Godot 4.3 by Tyler Wedderburn. Free to download.-->
 <!--body: page-pips-->
 <!--fonts: pips-->
+<!--og: img/pips-title.png-->
 <header class="wrap">@@NAV@@</header>
-<nav class="rail" aria-label="Sections on this page" data-rail>
-  <a href="#pp-head" aria-label="Title">Title</a>
-  <a href="#turn" aria-label="One turn">One turn</a>
-  <a href="#try" aria-label="Try a roll">Try a roll</a>
-  <a href="#stances" aria-label="Stances">Stances</a>
-  <a href="#castles-head" aria-label="Castles">Castles</a>
-  <a href="#heroes" aria-label="Heroes">Heroes</a>
-  <a href="#match" aria-label="Matching dice">Matching dice</a>
-  <a href="#made" aria-label="How it was made">How it was made</a>
+<nav class="subnav" aria-label="Pips &amp; Peril sections">
+  <div class="wrap subnav__in">
+    <a class="subnav__name" href="#pp-head">Pips &amp; Peril</a>
+    <ul class="subnav__links">
+      <li><a href="#turn">How it plays</a></li>
+      <li><a href="#try">Try a roll</a></li>
+      <li><a href="#castles">Castles</a></li>
+      <li><a href="#heroes">Heroes</a></li>
+    </ul>
+    <a class="pill" href="#get">Download</a>
+  </div>
 </nav>
 <main id="main">
   <section class="p-hero" aria-labelledby="pp-head" data-loop>
@@ -19,13 +22,13 @@
     <div class="pips-scrim" aria-hidden="true"></div>
     <div class="wrap p-hero__inner">
       <h1 id="pp-head">Pips &amp; Peril</h1>
-      <p class="lede">A dice roguelike. Roll, hold and reroll your way past three kings.</p>
+      <p class="lede">A retro dice roguelike for Android, Windows and Steam Deck. Roll, hold and reroll your way past three kings.</p>
       <div class="actions">
-        <a class="btn" href="https://github.com/Twedderburn/Pips-and-Peril">View on GitHub</a>
-        <a class="btn btn--quiet" href="#castles">See the castles</a>
+        <a class="btn" href="#get">Download the game</a>
+        <a class="btn btn--quiet" href="#turn">See how it plays</a>
       </div>
     </div>
-    <button class="loop-toggle" type="button" data-loop-toggle>Pause</button>
+    <button class="loop-toggle" type="button" data-loop-toggle aria-label="Pause or play the moving title art">Pause</button>
   </section>
 
   <section class="section" aria-labelledby="turn">
@@ -37,7 +40,7 @@
           <li><span><b>Roll</b> your damage dice and the D4 modifier.</span></li>
           <li><span><b>Hold</b> the dice you like and reroll the rest.</span></li>
           <li><span><b>Tap a target.</b> Pairs and triples add damage and coins.</span></li>
-          <li><span><b>Defend</b> on their turn: every pip blocks 10%.</span></li>
+          <li><span><b>Defend</b> on their turn. Every pip blocks 10%, and anything over 100% is reflected back.</span></li>
         </ol>
       </div>
       <figure class="shot">
@@ -131,22 +134,22 @@
   </section>
 
   <section class="section" aria-labelledby="heroes">
-    <div class="wrap split">
+    <div class="wrap split split--flip">
       <div>
         <h2 class="head" id="heroes">Four heroes, four sets of dice.</h2>
         <table class="table">
-          <thead><tr><th scope="col">Hero</th><th scope="col">Dice</th><th scope="col">Health</th></tr></thead>
+          <thead><tr><th scope="col">Hero</th><th scope="col">Dice</th><th scope="col">Health</th><th scope="col">Unlock</th></tr></thead>
           <tbody>
-            <tr><td>The Hero</td><td>Two d6</td><td class="num">60</td></tr>
-            <tr><td>The Knight</td><td>Guard die and a d6</td><td class="num">62</td></tr>
-            <tr><td>The Vampire</td><td>Leech die and a d6</td><td class="num">34</td></tr>
-            <tr><td>The Twins</td><td>Twin die and a d6</td><td class="num">55</td></tr>
+            <tr><td>The Hero</td><td>Two d6</td><td class="num">60</td><td>Open from the start</td></tr>
+            <tr><td>The Knight</td><td>Guard die and a d6</td><td class="num">62</td><td>Beat the Gold King</td></tr>
+            <tr><td>The Vampire</td><td>Leech die and a d6</td><td class="num">34</td><td>Beat the King of Cards</td></tr>
+            <tr><td>The Twins</td><td>Twin die and a d6</td><td class="num">55</td><td>Beat the Jack King</td></tr>
           </tbody>
         </table>
       </div>
       <figure class="shot">
         <img src="img/shots/select.png" width="640" height="360" alt="The hero select screen, showing The Hero, his dice and his stats" loading="lazy">
-        <figcaption class="caption">Beat a king to open the next hero.</figcaption>
+        <figcaption class="caption">The hero select screen. Everyone also gets the D4 modifier.</figcaption>
       </figure>
     </div>
   </section>
@@ -172,15 +175,52 @@
     </div>
   </section>
 
-  <section class="section" aria-labelledby="made">
+  <section class="section" aria-labelledby="between">
+    <div class="wrap">
+      <h2 class="head" id="between">Between fights.</h2>
+      <dl class="rows">
+        <div><dt>The shop</dt><dd>Opens after rounds 2, 4 and 6. It sells special dice, extra d6s, modifier and reroll upgrades, and a full heal. You start with two damage dice and can grow to four.</dd></div>
+        <div><dt>The jam</dt><dd>Every purchase except the heal strains the machine. The first is safe, then the jam risk is 25%, 50% and 75%. A jam eats your coins and throws you out of the shop.</dd></div>
+        <div><dt>Ascension</dt><dd>Each hero has five harder levels. Win a full run at one level to open the next for that hero.</dd></div>
+        <div><dt>Profiles</dt><dd>Up to five players can share one install, each with their own unlocks, records and saved run.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section band-plum" aria-labelledby="made">
     <div class="wrap">
       <h2 class="head" id="made">Made in Godot, scored in chiptune.</h2>
       <dl class="rows">
         <div><dt>Engine</dt><dd>Godot 4.3, with a balance simulator that plays hundreds of runs to test every change.</dd></div>
         <div><dt>Art</dt><dd>Generated with ElevenLabs image models, then cut down to a 16-bit palette with custom Python tools.</dd></div>
         <div><dt>Sound</dt><dd>Original chiptune music and effects, synthesised by a script written for the game.</dd></div>
-        <div><dt>Plays on</dt><dd>Android, Windows and Steam Deck, with touch or a controller.</dd></div>
+        <div><dt>Controls</dt><dd>Touch, a controller, or mouse and keyboard.</dd></div>
       </dl>
+    </div>
+  </section>
+
+  <section class="section getit" id="get" aria-labelledby="get-h">
+    <div class="wrap">
+      <h2 class="head" id="get-h">Get the game.</h2>
+      <p>Version 1.0.0, free to download. Each button fetches the file straight from GitHub.</p>
+      <div class="getit__grid" data-os-group>
+        <article class="getit__card" data-os="android">
+          <h3>Android</h3>
+          <p>Open the APK on your phone and allow installs from your browser or Files app when Android asks. Plays in landscape or portrait.</p>
+          <a class="btn btn--get" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril_1.apk">Download APK <span>49 MB</span></a>
+        </article>
+        <article class="getit__card" data-os="windows">
+          <h3>Windows</h3>
+          <p>A single .exe in a zip. The file is unsigned, so Windows SmartScreen may show a warning: choose “More info”, then “Run anyway”.</p>
+          <a class="btn btn--get" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril-Windows.zip">Download zip <span>33 MB</span></a>
+        </article>
+        <article class="getit__card" data-os="linux">
+          <h3>Steam Deck</h3>
+          <p>A native Linux build, so no Proton is needed. Extract it in Desktop Mode, run install.sh, then add the game to Steam as a non-Steam game.</p>
+          <a class="btn btn--get" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril-SteamDeck_1.zip">Download zip <span>27 MB</span></a>
+        </article>
+      </div>
+      <p class="getit__note">Full install steps and the rules are in the <a href="https://github.com/Twedderburn/Pips-and-Peril#readme">README on GitHub</a>. Found a bug? Email <a href="mailto:T1D0@pm.me">T1D0@pm.me</a>.</p>
     </div>
   </section>
 
