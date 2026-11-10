@@ -16,7 +16,7 @@ The pages are generated. Edit the sources, then rebuild:
 node build.mjs
 ```
 
-This writes `index.html`, `pips-and-peril.html` and `focus-home.html` here, with the shared header, footer and scripts. It also writes `projects.html`, a redirect to the home page that keeps the old address working. Commit and push them, and Pages updates in a minute or two.
+This writes `index.html`, `pips-and-peril.html`, `focus-home.html` and `404.html` here, with the shared header, footer and scripts. It also writes `projects.html`, a redirect to the home page that keeps the old address working. Commit and push them, and Pages updates in a minute or two.
 
 `node build.mjs --artifact` makes a version for a claude.ai artifact instead (in `artifact/`, which is not committed).
 
@@ -33,6 +33,12 @@ The download buttons point at fixed release files, so update them by hand:
 - Pips & Peril: the three links and file sizes in `src/index.html` and `src/pips-and-peril.html`
 - Focus Home: the link, size and version number in `src/index.html` and `src/focus-home.html`
 
-## A photo of Tyler
+## The photo of Tyler
 
-The About section on the home page has a hidden slot for a portrait. Put the photo in `img/` and add `<img src="img/your-file.jpg" alt="Tyler Wedderburn">` inside the `<div class="portrait">` in `src/index.html`; the section then becomes two columns.
+The About section shows `img/tyler.jpg` (800 by 1000, cropped from the original). To change it, replace that file with another picture of the same shape.
+
+## Downloads that fit the visitor
+
+A script marks the download that matches the visitor's device (Android, Windows or Linux) and sets the others in outline. Each download carries a `data-os` attribute inside a `data-os-group`.
+
+`404.html` is the page GitHub Pages shows for an address that doesn't exist.

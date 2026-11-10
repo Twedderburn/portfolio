@@ -130,6 +130,7 @@ button, input, select, textarea { font: inherit; }
 .subnav__links { display: flex; gap: var(--space-lg); margin: 0; padding: 0; list-style: none; }
 .subnav__links a { font-size: var(--text-sm); color: var(--color-ink-2); text-decoration: none; white-space: nowrap; transition: color var(--dur-short) var(--ease-out); }
 .subnav__links a:hover { color: var(--color-ink); }
+.subnav__links a[aria-current="true"] { color: var(--color-ink); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.45em; }
 .pill { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-lg); border-radius: var(--radius-pill); background: var(--color-accent); color: var(--color-accent-ink); font: 600 var(--text-sm)/1 var(--font-body); white-space: nowrap; text-decoration: none; transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
 .pill:hover { background: var(--color-ink); }
 .pill:active { transform: translateY(1px); }
@@ -149,6 +150,15 @@ button, input, select, textarea { font: inherit; }
 .getit__note { margin-top: var(--space-lg); color: var(--color-muted); max-width: 70ch; }
 .getit__note a { color: var(--color-ink); text-underline-offset: 0.2em; }
 
+/* when the visitor's device matches one of the downloads, that one leads and the others go quiet */
+.actions.has-yours .btn--get:not(.is-yours), .getit__grid.has-yours .getit__card:not(.is-yours) .btn--get { background: transparent; color: var(--color-ink); border-color: var(--color-ink-2); }
+.actions.has-yours .btn--get:not(.is-yours):hover, .getit__grid.has-yours .getit__card:not(.is-yours) .btn--get:hover { background: var(--color-paper-3); }
+.actions.has-yours .is-yours { order: -1; }
+.getit__card.is-yours { border-color: var(--color-accent); }
+.getit__card.is-yours h3::after { content: "For this device"; display: inline-block; margin-left: var(--space-sm); padding: var(--space-2xs) var(--space-xs); border: 1px solid var(--color-accent); border-radius: var(--radius-pill); color: var(--color-accent); font: 600 var(--text-xs)/1.2 var(--font-body); letter-spacing: 0; vertical-align: middle; }
+html[data-os="android"] .not-android { display: none; }
+.getit__card p.not-android { flex: 0; font-size: var(--text-md); color: var(--color-muted); }
+
 /* ---------- home ---------- */
 /* the intro: a short green band, so the first project starts on the first screen */
 .intro { background: var(--color-field); color: var(--color-field-ink); --color-ink: var(--color-field-ink); --color-ink-2: var(--color-field-ink); --color-focus: var(--color-field-ink); }
@@ -157,6 +167,11 @@ button, input, select, textarea { font: inherit; }
 .js .intro h1 { animation: rise 0.8s var(--ease-out) both; }
 @keyframes rise { from { opacity: 0; transform: translateY(24%); } to { opacity: 1; transform: none; } }
 .intro__line { max-width: 40ch; font: 600 var(--text-xl)/1.3 var(--font-body); letter-spacing: -0.01em; }
+.intro--tall { min-height: 70svh; }
+.intro .btn { background: var(--color-field-ink); color: var(--color-wood-ink); border-color: var(--color-field-ink); }
+.intro .btn:hover { background: var(--color-field-hover); }
+.intro .btn--quiet { background: transparent; color: var(--color-field-ink); }
+.intro .btn--quiet:hover { background: color-mix(in oklab, var(--color-field-ink) 12%, transparent); }
 
 /* one panel per project, in that project's colours: what it is, the downloads, then the pictures */
 .feature { padding-block: var(--section-gap-s); }
@@ -170,6 +185,10 @@ button, input, select, textarea { font: inherit; }
 .world-pips.feature h2 { color: var(--color-accent); }
 .world-focus.feature h2 { letter-spacing: -0.045em; }
 .feature__desc { margin-top: var(--space-md); max-width: 32ch; font-size: var(--text-xl); line-height: 1.35; }
+.feature__facts { margin: var(--space-lg) 0 0; padding: 0; list-style: none; display: grid; gap: var(--space-xs); color: var(--color-ink-2); }
+.feature__facts li { display: grid; grid-template-columns: 10px minmax(0, 1fr); gap: var(--space-sm); align-items: baseline; }
+.feature__facts li::before { content: ""; width: 8px; height: 8px; background: var(--color-accent); translate: 0 -1px; }
+.world-focus .feature__facts li::before { border-radius: 50%; }
 .feature .actions { margin-top: var(--space-xl); }
 .feature__note { margin-top: var(--space-sm); font-size: var(--text-sm); color: var(--color-muted); }
 .more { display: inline-flex; align-items: center; min-height: 44px; margin-top: var(--space-md); font-weight: 600; color: var(--color-accent); text-underline-offset: 0.2em; }
@@ -186,11 +205,11 @@ button, input, select, textarea { font: inherit; }
 .media-focus img { aspect-ratio: 1 / 2; object-fit: cover; object-position: 50% 0; border-radius: 20px; }
 .media-focus img:nth-child(odd) { margin-top: var(--space-xl); }
 
-/* about: Tyler's own words on wood, with room for his photo once there is one */
+/* about: Tyler's photo and his own words, on wood */
 .about-band { background: var(--color-wood); color: var(--color-wood-ink); --color-ink: var(--color-wood-ink); --color-ink-2: var(--color-wood-ink); --color-paper: var(--color-wood); --color-paper-2: color-mix(in oklab, var(--color-wood-ink) 12%, var(--color-wood)); --color-focus: var(--color-wood-ink); }
 .about { display: grid; gap: var(--space-2xl); align-items: start; }
-.about:has(.portrait img) { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); }
-.portrait { display: none; aspect-ratio: 4 / 5; border-radius: var(--radius-card); }
+.about:has(.portrait img) { grid-template-columns: minmax(0, 380px) minmax(0, 1fr); align-items: center; }
+.portrait { display: none; aspect-ratio: 4 / 5; border-radius: var(--radius-card); outline: 2px solid var(--color-wood-ink); outline-offset: -1px; rotate: -2deg; }
 .portrait:has(img) { display: block; }
 .about .head { max-width: 16ch; }
 .about .say { margin-top: var(--space-lg); max-width: 46ch; font-size: var(--text-xl); line-height: 1.45; }
@@ -354,7 +373,7 @@ html:not(.js) .story__steps { grid-column: 1 / -1; }
   .feature__in, .feature--flip .feature__in, .about:has(.portrait img), .split, .split--flip, .footer__row { grid-template-columns: minmax(0, 1fr); }
   .feature--flip .feature__text { order: 0; }
   .feature__in { gap: var(--space-xl); }
-  .portrait { max-width: 320px; }
+  .portrait { max-width: 300px; rotate: none; }
   .rows > div { grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
   .getit__grid { grid-template-columns: minmax(0, 1fr); }
   .subnav__links { display: none; }
@@ -448,10 +467,15 @@ html:not(.js) .story__steps { grid-column: 1 / -1; }
           <p class="feature__kind">Game · Android, Windows, Steam Deck</p>
           <h2 id="f-pips"><a href="pips-and-peril.html">Pips &amp; Peril</a></h2>
           <p class="feature__desc">A retro dice roguelike. Pick a hero, roll, hold and reroll, and fight through three castles to topple their kings.</p>
-          <div class="actions" role="group" aria-label="Download Pips &amp; Peril 1.0.0">
-            <a class="btn btn--get" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril_1.apk">Android <span>49 MB</span></a>
-            <a class="btn btn--get" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril-Windows.zip">Windows <span>33 MB</span></a>
-            <a class="btn btn--get" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril-SteamDeck_1.zip">Steam Deck <span>27 MB</span></a>
+          <ul class="feature__facts">
+            <li>Four heroes, each with their own dice</li>
+            <li>Three castles, each with its own king</li>
+            <li>Touch, a controller, or mouse and keyboard</li>
+          </ul>
+          <div class="actions" role="group" aria-label="Download Pips &amp; Peril 1.0.0" data-os-group>
+            <a class="btn btn--get" data-os="android" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril_1.apk">Android <span>49 MB</span></a>
+            <a class="btn btn--get" data-os="windows" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril-Windows.zip">Windows <span>33 MB</span></a>
+            <a class="btn btn--get" data-os="linux" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril-SteamDeck_1.zip">Steam Deck <span>27 MB</span></a>
           </div>
           <p class="feature__note">Version 1.0.0. The buttons download straight from GitHub.</p>
           <a class="more" href="pips-and-peril.html">See how it plays</a>
@@ -470,10 +494,15 @@ html:not(.js) .story__steps { grid-column: 1 / -1; }
           <p class="feature__kind">App · Android 10 and later</p>
           <h2 id="f-focus"><a href="focus-home.html">Focus Home</a></h2>
           <p class="feature__desc">A home screen that opens only your favorite apps. To get the rest back, you scan a QR key you hid somewhere inconvenient.</p>
+          <ul class="feature__facts">
+            <li>Only a live scan of your key opens the rest</li>
+            <li>Locks itself again, after 30 minutes by default</li>
+            <li>Five backgrounds and seven accent colours</li>
+          </ul>
           <div class="actions">
             <a class="btn btn--get" href="https://github.com/Twedderburn/focushomePublic/releases/download/v1.6/FocusHome-1.6.apk">Download for Android <span>2.9 MB</span></a>
           </div>
-          <p class="feature__note">Public release 1.6. The button downloads the APK straight from GitHub.</p>
+          <p class="feature__note">Public release 1.6, straight from GitHub. <span class="not-android">It only runs on Android, so open this page on your phone to install it.</span></p>
           <a class="more" href="focus-home.html">See how a day goes</a>
         </div>
         <a class="feature__media media-focus" href="focus-home.html" aria-label="Focus Home: see how a day goes">
@@ -487,7 +516,7 @@ html:not(.js) .story__steps { grid-column: 1 / -1; }
 
   <section class="section about-band" id="about" aria-labelledby="who">
     <div class="wrap about">
-      <div class="portrait" data-slot="portrait" data-alt="A photo of Tyler"></div>
+      <div class="portrait" data-slot="portrait" data-alt="A photo of Tyler"><img src="img/tyler.jpg" width="800" height="1000" alt="Tyler smiling in a ball cap, holding a toddler who is drinking from a sippy cup" loading="lazy"></div>
       <div>
         <h2 class="head" id="who">Kitchen first, then the keyboard.</h2>
         <p class="say">I’m Tyler. I cook for the Canadian Armed Forces in Manitoba. Everything here is something I made on my own time: a dice game with three castles to clear, and a phone launcher that keeps me off my phone. My Christian faith runs through all of it.</p>
@@ -513,6 +542,27 @@ html:not(.js) .story__steps { grid-column: 1 / -1; }
 <script>
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // downloads: mark the file that fits this device, so the visitor doesn't have to work it out
+  const ua = navigator.userAgent;
+  const os = /Android/i.test(ua) ? 'android' : /Windows/i.test(ua) ? 'windows' : /Linux|X11/i.test(ua) ? 'linux' : 'other';
+  document.documentElement.dataset.os = os;
+  document.querySelectorAll('[data-os-group]').forEach((g) => {
+    const mine = g.querySelector('[data-os="' + os + '"]');
+    if (mine) { g.classList.add('has-yours'); mine.classList.add('is-yours'); }
+  });
+
+  // project pages: the sticky bar marks the section in view
+  const bar = [...document.querySelectorAll('.subnav__links a')];
+  if (bar.length) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => {
+      const link = bar.find((l) => { const t = document.querySelector(l.hash); return t && (t.closest('section') || t) === e.target; });
+      if (!link) return;
+      if (e.isIntersecting) bar.forEach((l) => (l === link ? l.setAttribute('aria-current', 'true') : l.removeAttribute('aria-current')));
+      else link.removeAttribute('aria-current');
+    }), { rootMargin: '-30% 0px -65% 0px' });
+    bar.forEach((l) => { const t = document.querySelector(l.hash); if (t) io.observe(t.closest('section') || t); });
+  }
 
   // Pips & Peril: two d6 and a D4 modifier; hold, then one reroll
   const roller = document.querySelector('[data-roller]');

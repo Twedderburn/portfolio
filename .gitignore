@@ -2,3 +2,5 @@
 .hallmark/
 # The claude.ai artifact build (home page without the document skeleton)
 artifact/
+# Local preview config
+.claude/

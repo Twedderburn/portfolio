@@ -20,10 +20,15 @@
           <p class="feature__kind">Game · Android, Windows, Steam Deck</p>
           <h2 id="f-pips"><a href="pips-and-peril.html">Pips &amp; Peril</a></h2>
           <p class="feature__desc">A retro dice roguelike. Pick a hero, roll, hold and reroll, and fight through three castles to topple their kings.</p>
-          <div class="actions" role="group" aria-label="Download Pips &amp; Peril 1.0.0">
-            <a class="btn btn--get" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril_1.apk">Android <span>49 MB</span></a>
-            <a class="btn btn--get" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril-Windows.zip">Windows <span>33 MB</span></a>
-            <a class="btn btn--get" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril-SteamDeck_1.zip">Steam Deck <span>27 MB</span></a>
+          <ul class="feature__facts">
+            <li>Four heroes, each with their own dice</li>
+            <li>Three castles, each with its own king</li>
+            <li>Touch, a controller, or mouse and keyboard</li>
+          </ul>
+          <div class="actions" role="group" aria-label="Download Pips &amp; Peril 1.0.0" data-os-group>
+            <a class="btn btn--get" data-os="android" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril_1.apk">Android <span>49 MB</span></a>
+            <a class="btn btn--get" data-os="windows" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril-Windows.zip">Windows <span>33 MB</span></a>
+            <a class="btn btn--get" data-os="linux" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril-SteamDeck_1.zip">Steam Deck <span>27 MB</span></a>
           </div>
           <p class="feature__note">Version 1.0.0. The buttons download straight from GitHub.</p>
           <a class="more" href="pips-and-peril.html">See how it plays</a>
@@ -42,10 +47,15 @@
           <p class="feature__kind">App · Android 10 and later</p>
           <h2 id="f-focus"><a href="focus-home.html">Focus Home</a></h2>
           <p class="feature__desc">A home screen that opens only your favorite apps. To get the rest back, you scan a QR key you hid somewhere inconvenient.</p>
+          <ul class="feature__facts">
+            <li>Only a live scan of your key opens the rest</li>
+            <li>Locks itself again, after 30 minutes by default</li>
+            <li>Five backgrounds and seven accent colours</li>
+          </ul>
           <div class="actions">
             <a class="btn btn--get" href="https://github.com/Twedderburn/focushomePublic/releases/download/v1.6/FocusHome-1.6.apk">Download for Android <span>2.9 MB</span></a>
           </div>
-          <p class="feature__note">Public release 1.6. The button downloads the APK straight from GitHub.</p>
+          <p class="feature__note">Public release 1.6, straight from GitHub. <span class="not-android">It only runs on Android, so open this page on your phone to install it.</span></p>
           <a class="more" href="focus-home.html">See how a day goes</a>
         </div>
         <a class="feature__media media-focus" href="focus-home.html" aria-label="Focus Home: see how a day goes">
@@ -59,7 +69,7 @@
 
   <section class="section about-band" id="about" aria-labelledby="who">
     <div class="wrap about">
-      <div class="portrait" data-slot="portrait" data-alt="A photo of Tyler"></div>
+      <div class="portrait" data-slot="portrait" data-alt="A photo of Tyler"><img src="img/tyler.jpg" width="800" height="1000" alt="Tyler smiling in a ball cap, holding a toddler who is drinking from a sippy cup" loading="lazy"></div>
       <div>
         <h2 class="head" id="who">Kitchen first, then the keyboard.</h2>
         <p class="say">I’m Tyler. I cook for the Canadian Armed Forces in Manitoba. Everything here is something I made on my own time: a dice game with three castles to clear, and a phone launcher that keeps me off my phone. My Christian faith runs through all of it.</p>
