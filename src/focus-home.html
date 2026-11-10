@@ -1,18 +1,19 @@
-<!--title: Focus Home-->
+<!--title: Focus Home, an Android launcher by Tyler Wedderburn-->
 <!--desc: Focus Home, an Android launcher by Tyler Wedderburn that opens only your favorite apps until you scan a QR key you hid. Public release 1.6; dev build 1.7.-->
 <!--body: page-focus-->
 <!--fonts: focus-->
+<!--og: img/fh/home-walnut.png-->
 <header class="wrap">@@NAV@@</header>
 <nav class="subnav" aria-label="Focus Home sections">
   <div class="wrap subnav__in">
     <a class="subnav__name" href="#fh-head">Focus Home</a>
     <ul class="subnav__links">
+      <li><a href="#how">How a day goes</a></li>
       <li><a href="#highlights">Highlights</a></li>
-      <li><a href="#how">How it works</a></li>
       <li><a href="#versions">Versions</a></li>
       <li><a href="#specs">Specs</a></li>
     </ul>
-    <a class="pill" href="https://github.com/Twedderburn/focushomePublic/releases/tag/v1.6">Get 1.6</a>
+    <a class="pill" href="#get">Download</a>
   </div>
 </nav>
 <main id="main">
@@ -21,8 +22,9 @@
       <a class="build-tag" href="#versions">Public release 1.6, dev build 1.7</a>
       <h1 id="fh-head">Focus Home</h1>
       <p class="ap-sub">Your phone, cut down to the apps you chose.</p>
+      <p class="ap-lede">An Android home screen that opens only your favorites. To get the rest back, you scan a QR key you hid somewhere inconvenient.</p>
       <div class="ap-links">
-        <a class="pill pill--lg" href="https://github.com/Twedderburn/focushomePublic/releases/tag/v1.6">Get the public release</a>
+        <a class="pill pill--lg" href="#get">Download for Android</a>
         <a class="ap-link" href="#how">See how a day goes</a>
       </div>
     </div>
@@ -30,37 +32,6 @@
       <div class="phone__shot ap-fan__side" data-slot="fh-fan-1" data-kind="product" data-alt="Focus Home screenshot" style="--i: 1"><img src="img/fh/focus-mode.png" width="540" height="1080" alt="Focus mode: the clock, focus time and favorites" fetchpriority="high"></div>
       <div class="phone__shot ap-fan__main" data-slot="fh-fan-2" data-kind="product" data-alt="Focus Home screenshot" style="--i: 0"><img src="img/fh/home-walnut.png" width="540" height="1080" alt="The home screen in Walnut with the Sage accent: date, large clock, an Unlocked pill and a grid of favorites with a folder" fetchpriority="high"></div>
       <div class="phone__shot ap-fan__side" data-slot="fh-fan-3" data-kind="product" data-alt="Focus Home screenshot" style="--i: 2"><img src="img/fh/drawer.png" width="540" height="1080" alt="The All apps drawer with a search box" fetchpriority="high"></div>
-    </div>
-  </section>
-
-  <section class="ap-light" id="highlights" aria-labelledby="hl">
-    <div class="wrap">
-      <h2 class="ap-h2" id="hl">Get the highlights.</h2>
-      <div class="bento">
-        <article class="b b--wide">
-          <h3>Five backgrounds. Seven accents.</h3>
-          <p>One accent colours the clock, the buttons and every highlight.</p>
-          <div class="b__pic" data-slot="fh-b-1" data-kind="product" data-alt="Focus Home screenshot"><img src="img/fh/colours.png" width="540" height="1080" alt="Settings with background swatches and accent colours" loading="lazy"></div>
-        </article>
-        <article class="b b--tall">
-          <h3>Folders, by feel.</h3>
-          <p>Drop one app on another.</p>
-          <div class="b__pic" data-slot="fh-b-2" data-kind="product" data-alt="Focus Home screenshot"><img src="img/fh/folder.png" width="540" height="1080" alt="A folder holding Clock and Calendar" loading="lazy"></div>
-        </article>
-        <article class="b b--stat">
-          <span class="b__big">15 min</span>
-          <p>The first lost-key wait of the day. Then 30, then 60.</p>
-        </article>
-        <article class="b b--stat" id="key">
-          <span class="b__big">SHA-256</span>
-          <p>The only trace of your key the phone keeps. Only a live scan counts.</p>
-        </article>
-        <article class="b b--wide b--dark">
-          <h3>A tour that points at the real screen.</h3>
-          <p>Right after setup, step by step. Replay it any time.</p>
-          <div class="b__pic" data-slot="fh-b-3" data-kind="product" data-alt="Focus Home screenshot"><img src="img/fh/tour.png" width="540" height="1080" alt="A tour step spotlighting the favorites grid" loading="lazy"></div>
-        </article>
-      </div>
     </div>
   </section>
 
@@ -102,6 +73,37 @@
     </div>
   </section>
 
+  <section class="ap-light" id="highlights" aria-labelledby="hl">
+    <div class="wrap">
+      <h2 class="ap-h2" id="hl">The highlights.</h2>
+      <div class="bento">
+        <article class="b b--wide">
+          <h3>Five backgrounds. Seven accents.</h3>
+          <p>One accent colours the clock, the buttons and every highlight.</p>
+          <div class="b__pic" data-slot="fh-b-1" data-kind="product" data-alt="Focus Home screenshot"><img src="img/fh/colours.png" width="540" height="1080" alt="Settings with background swatches and accent colours" loading="lazy"></div>
+        </article>
+        <article class="b b--tall">
+          <h3>Folders, by feel.</h3>
+          <p>Hold an icon, drag it onto another app and let go.</p>
+          <div class="b__pic" data-slot="fh-b-2" data-kind="product" data-alt="Focus Home screenshot"><img src="img/fh/folder.png" width="540" height="1080" alt="A folder holding Clock and Calendar" loading="lazy"></div>
+        </article>
+        <article class="b b--stat">
+          <span class="b__big">15 min</span>
+          <p>The first lost-key wait of the day. Then 30, then 60.</p>
+        </article>
+        <article class="b b--stat" id="key">
+          <span class="b__big">SHA-256</span>
+          <p>The only trace of your key the phone keeps. Only a live scan counts.</p>
+        </article>
+        <article class="b b--wide b--dark">
+          <h3>A tour that points at the real screen.</h3>
+          <p>Right after setup, step by step. Replay it any time.</p>
+          <div class="b__pic" data-slot="fh-b-3" data-kind="product" data-alt="Focus Home screenshot"><img src="img/fh/tour.png" width="540" height="1080" alt="A tour step spotlighting the favorites grid" loading="lazy"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="ap-light" id="versions" aria-labelledby="ver-h">
     <div class="wrap">
       <h2 class="ap-h2 ap-center" id="ver-h">Which version is which?</h2>
@@ -109,7 +111,7 @@
         <thead>
           <tr>
             <td></td>
-            <th scope="col"><span class="compare__num">1.6</span><span class="compare__name">Public release</span><a class="ap-link" href="https://github.com/Twedderburn/focushomePublic/releases/tag/v1.6">GitHub</a></th>
+            <th scope="col"><span class="compare__num">1.6</span><span class="compare__name">Public release</span><a class="ap-link" href="#get">Download</a></th>
             <th scope="col"><span class="compare__num">1.7</span><span class="compare__name">Dev build, in testing</span></th>
           </tr>
         </thead>
@@ -128,13 +130,27 @@
 
   <section class="section" id="specs" aria-labelledby="specs-h">
     <div class="wrap">
-      <h2 class="ap-h2" id="specs-h">Tech specs.</h2>
+      <h2 class="ap-h2" id="specs-h">The details.</h2>
       <dl class="rows">
         <div><dt>Runs on</dt><dd>Android 10 and later. Built and tested on a Galaxy S25.</dd></div>
         <div><dt>Built with</dt><dd>Kotlin, Jetpack Compose and Material 3.</dd></div>
         <div><dt>Key</dt><dd>Any QR code, scanned live with Google’s code scanner. No camera permission.</dd></div>
         <div><dt>Auto-relock</dt><dd>Off, 15 minutes, 30 minutes, 1 hour or 2 hours.</dd></div>
       </dl>
+    </div>
+  </section>
+
+  <section class="section getit band-espresso" id="get" aria-labelledby="get-h">
+    <div class="wrap">
+      <h2 class="ap-h2" id="get-h">Get Focus Home.</h2>
+      <div class="getit__grid getit__grid--one">
+        <article class="getit__card">
+          <h3>Public release 1.6</h3>
+          <p>Download the APK and open it on your Android phone (Android 10 or later). You may need to allow installs from your browser or file manager.</p>
+          <a class="pill pill--lg" href="https://github.com/Twedderburn/focushomePublic/releases/download/v1.6/FocusHome-1.6.apk">Download APK <span>2.9 MB</span></a>
+        </article>
+      </div>
+      <p class="getit__note">The <a href="https://github.com/Twedderburn/focushomePublic/releases/tag/v1.6">release notes on GitHub</a> list what changed and give the file’s SHA-256 checksum. Found a bug? Email <a href="mailto:T1D0@pm.me">T1D0@pm.me</a>.</p>
     </div>
   </section>
 

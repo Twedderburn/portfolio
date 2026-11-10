@@ -3,20 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tyler Wedderburn</title>
-<meta name="description" content="Tyler Wedderburn is a military cook in Manitoba who builds games and Android apps off shift.">
+<title>Tyler Wedderburn: games and Android apps</title>
+<meta name="description" content="Tyler Wedderburn is a military cook in Manitoba who builds games and Android apps off shift. Download Pips &amp; Peril and Focus Home.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tyler Wedderburn: games and Android apps">
+<meta property="og:description" content="Tyler Wedderburn is a military cook in Manitoba who builds games and Android apps off shift. Download Pips &amp; Peril and Focus Home.">
+<meta property="og:url" content="https://twedderburn.github.io/portfolio/">
+<meta property="og:image" content="https://twedderburn.github.io/portfolio/img/pips-title.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%234f9a4b'/%3E%3Cpath d='M8 9h16v4h-6v11h-4V13H8z' fill='%230d1a10'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@800&family=Hanken+Grotesk:wght@400;600&family=EB+Garamond:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@800&family=Hanken+Grotesk:wght@400;600&family=Pixelify+Sans:wght@600&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js');</script>
 <style>
-/* Hallmark · shape: a four-page site, a home that says who Tyler is, a tiled projects index, one full page per project · genre: editorial · theme: custom · job: hire · idea: "A military cook's off-shift work, each project shown in its own world inside his green and wood frame" · vibe: "forest green, walnut, bold type, worlds inside"
- * paper: oklch(17% 0.022 150) · accent: oklch(72% 0.14 144) · display: League Spartan 800 (home adds an EB Garamond italic line; Pixelify Sans on Pips & Peril; Hanken Grotesk heads on Focus Home; each page loads three families at most) · body: Hanken Grotesk · hero: an off shift / on shift switch that repaints the hero green or walnut, a serif line with a game screenshot set inline, and the name set so its baseline sits on the hero's bottom edge · nav: wordmark, the three pages by name, the email at the far edge, one shared header on every page · footer: one band, name and place, page links, email, picture note · imagery: Pips & Peril screenshots 8 (Godot autopilot capture), game art (user's own), Focus Home screens built in HTML (no screenshots yet), portrait slot waiting · signature: the off shift / on shift switch on the home hero; per page a different style (editorial home, collage projects canvas, arcade Pips page with a pixel rail and a dice roller, austere Focus page with a scan demo)
- * axes: dark/display-heavy/chromatic-green · posture: full palette (field green, seal walnut, ink, forest paper; project pages swap in their own palettes) · contrast: pass · fold: pass · v2.0.0 */
-/* Hallmark · pre-emit critique: P4 H5 E4 S5 R4 V5 · weakest: P, a hobby portfolio can read as a résumé; the home leads with the kitchen-to-keyboard fact and real screens instead of a skills list */
-/* Hallmark · waive 37 · the shared stylesheet names four faces but each page loads three · the home page loads EB Garamond and never Pixelify Sans, the Pips & Peril and projects pages load Pixelify Sans and never EB Garamond */
-/* Hallmark · waive 83 · the projects collage is a portfolio of Tyler's own work · every tile is a real Pips & Peril capture or a real Focus Home dev build screenshot, and each one links to its project */
-/* Hallmark · waive 77 · the about section is one statement set at 46px across eight columns · Tyler's own words about the kitchen and his faith carry it, and the portrait slot fills the left column once his photo arrives */
 :root { color-scheme: dark; }
 :root {
   --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
@@ -72,10 +71,14 @@ button, input, select, textarea { font: inherit; }
 @media (max-width: 40rem) { :root { --gutter: 16px; --section-gap-s: 56px; --section-gap: 72px; --section-gap-l: 96px; --gap-columns: 16px; } }
 @media (prefers-reduced-motion: reduce) { *:not(.keep-motion), *:not(.keep-motion)::before, *:not(.keep-motion)::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
 
+/* Tyler Wedderburn's portfolio: a home page that puts both projects and their downloads up front, and one full page per project.
+ * Frame: forest green, walnut and wood, League Spartan heads, Hanken Grotesk body.
+ * Each project keeps its own world wherever it appears: plum, gold and Pixelify Sans for Pips & Peril; walnut, sage and plain Hanken for Focus Home. */
 
-/* ---------- page palettes ---------- */
-body.page-pips { --color-paper: var(--pp-paper); --color-paper-2: var(--pp-paper-2); --color-paper-3: var(--pp-paper-3); --color-ink: var(--pp-ink); --color-ink-2: var(--pp-ink-2); --color-muted: var(--pp-muted); --color-rule: var(--pp-rule); --color-accent: var(--pp-gold); --color-accent-ink: var(--pp-accent-ink); --color-focus: var(--pp-focus); --font-head: var(--font-outlier); }
-body.page-focus { --color-paper: var(--es-walnut); --color-paper-2: var(--es-mocha); --color-paper-3: var(--es-card); --color-ink: var(--es-ink); --color-ink-2: var(--es-ink-2); --color-muted: var(--es-muted); --color-rule: var(--es-rule); --color-accent: var(--es-sage); --color-accent-ink: var(--es-sage-ink); --color-focus: var(--es-focus); --font-head: var(--font-body); }
+/* ---------- project worlds: inside a project, its colours win ---------- */
+.page-pips, .world-pips { --color-paper: var(--pp-paper); --color-paper-2: var(--pp-paper-2); --color-paper-3: var(--pp-paper-3); --color-ink: var(--pp-ink); --color-ink-2: var(--pp-ink-2); --color-muted: var(--pp-muted); --color-rule: var(--pp-rule); --color-accent: var(--pp-gold); --color-accent-ink: var(--pp-accent-ink); --color-focus: var(--pp-focus); --font-head: var(--font-outlier); }
+.page-focus, .world-focus { --color-paper: var(--es-walnut); --color-paper-2: var(--es-mocha); --color-paper-3: var(--es-card); --color-ink: var(--es-ink); --color-ink-2: var(--es-ink-2); --color-muted: var(--es-muted); --color-rule: var(--es-rule); --color-accent: var(--es-sage); --color-accent-ink: var(--es-sage-ink); --color-focus: var(--es-focus); --font-head: var(--font-body); }
+.world-pips, .world-focus { background: var(--color-paper); color: var(--color-ink); }
 
 /* ---------- shared chrome ---------- */
 .skip { position: absolute; left: var(--space-md); top: calc(-1 * var(--space-3xl)); z-index: var(--z-toast); padding: var(--space-xs) var(--space-md); background: var(--color-ink); color: var(--color-paper); }
@@ -90,13 +93,17 @@ body.page-focus { --color-paper: var(--es-walnut); --color-paper-2: var(--es-moc
 .nav__links a[aria-current="page"] { color: var(--color-ink); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.3em; }
 .nav__mail { margin-left: auto; }
 
-.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 var(--space-lg); border: 1px solid var(--color-ink); border-radius: var(--radius-pill); background: var(--color-ink); color: var(--color-paper); font: 600 var(--text-md)/1 var(--font-body); white-space: nowrap; text-decoration: none; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 var(--space-lg); border: 1px solid var(--color-ink); border-radius: var(--radius-pill); background: var(--color-ink); color: var(--color-paper); font: 600 var(--text-md)/1 var(--font-body); white-space: nowrap; text-decoration: none; cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
 .btn:hover { background: var(--color-ink-2); }
 .btn:active { transform: translateY(1px); }
 .btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
 .btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
 .btn--quiet { background: transparent; color: var(--color-ink); border-color: var(--color-ink-2); }
 .btn--quiet:hover { background: var(--color-paper-2); }
+/* a download: the accent colour, with the file size set lighter beside the label */
+.btn--get { background: var(--color-accent); color: var(--color-accent-ink); border-color: var(--color-accent); }
+.btn--get:hover { background: var(--color-ink); border-color: var(--color-ink); }
+.btn span, .pill span { margin-left: 0.6em; font-weight: 400; }
 .actions { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
 
 .section { padding-block: var(--section-gap-s); }
@@ -116,113 +123,84 @@ body.page-focus { --color-paper: var(--es-walnut); --color-paper-2: var(--es-moc
 .footer a:hover { text-decoration: underline; }
 .footer__note { margin-top: var(--space-lg); font-size: var(--text-sm); color: var(--color-muted); }
 
+/* a sticky bar on each project page: the project's name, its sections, and the download */
+.subnav { position: sticky; top: 0; z-index: var(--z-sticky-nav); background: color-mix(in oklab, var(--color-paper) 84%, transparent); backdrop-filter: saturate(1.4) blur(18px); border-bottom: 1px solid var(--color-rule); }
+.subnav__in { display: flex; align-items: center; gap: var(--space-lg); min-height: 56px; }
+.subnav__name { margin-right: auto; font: 600 var(--text-lg)/1 var(--font-head); letter-spacing: -0.01em; color: var(--color-ink); text-decoration: none; white-space: nowrap; }
+.subnav__links { display: flex; gap: var(--space-lg); margin: 0; padding: 0; list-style: none; }
+.subnav__links a { font-size: var(--text-sm); color: var(--color-ink-2); text-decoration: none; white-space: nowrap; transition: color var(--dur-short) var(--ease-out); }
+.subnav__links a:hover { color: var(--color-ink); }
+.pill { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-lg); border-radius: var(--radius-pill); background: var(--color-accent); color: var(--color-accent-ink); font: 600 var(--text-sm)/1 var(--font-body); white-space: nowrap; text-decoration: none; transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
+.pill:hover { background: var(--color-ink); }
+.pill:active { transform: translateY(1px); }
+.pill:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+.pill--lg { min-height: 52px; padding: 0 var(--space-xl); font-size: var(--text-md); }
+
+/* the download section that closes each project page */
+.getit__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-md); margin-top: var(--space-2xl); }
+.getit__grid--one { grid-template-columns: minmax(0, 640px); }
+.getit__card { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-sm); padding: var(--space-xl); background: var(--color-paper-2); border: 1px solid var(--color-rule); border-radius: var(--radius-card); }
+.band-plum .getit__card, .band-espresso .getit__card { background: var(--color-paper-3); }
+.page-focus .getit__card { border-radius: 28px; }
+.getit__card h3 { font: 600 var(--text-2xl)/1.1 var(--font-head); }
+.page-focus .getit__card h3 { letter-spacing: -0.025em; }
+.getit__card p { flex: 1; font-size: var(--text-lead); line-height: 1.45; color: var(--color-ink-2); }
+.getit__card .btn, .getit__card .pill { margin-top: var(--space-sm); }
+.getit__note { margin-top: var(--space-lg); color: var(--color-muted); max-width: 70ch; }
+.getit__note a { color: var(--color-ink); text-underline-offset: 0.2em; }
+
 /* ---------- home ---------- */
-/* the home hero: a side switch, a serif line with a picture in it, the name bleeding off the edge */
-.home-hero { --hero-bg: var(--color-field); --hero-ink: var(--color-field-ink); --hero-btn-ink: var(--color-ink); --hero-hover: var(--color-field-hover); position: relative; overflow: hidden; background: var(--hero-bg); color: var(--hero-ink); transition: background-color var(--dur-long) var(--ease-in-out), color var(--dur-long) var(--ease-in-out); }
-.home-hero[data-side="on"] { --hero-bg: var(--color-wood); --hero-ink: var(--color-wood-ink); --hero-btn-ink: var(--color-wood); --hero-hover: var(--color-wood-2); }
-.home-hero .nav, .home-hero .wordmark, .home-hero .nav__links a, .home-hero .nav__mail { color: var(--hero-ink); }
-.home-hero :focus-visible { outline-color: var(--hero-ink); }
-.hero-body { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--space-2xl); align-items: center; }
-.stack { position: relative; height: 400px; margin-top: var(--space-xl); }
-.stack > * { position: absolute; border-radius: var(--radius-card); outline: 2px solid var(--hero-ink); outline-offset: -1px; }
-.stack img { image-rendering: pixelated; object-fit: cover; }
-.stack__a { top: 0; right: 0; width: 82%; aspect-ratio: 16 / 9; rotate: 3deg; }
-.stack__b { left: 2%; top: 12%; width: 32%; aspect-ratio: 1 / 2; rotate: -4deg; image-rendering: auto; }
-.stack__c { right: 4%; bottom: 0; width: 60%; aspect-ratio: 16 / 9; rotate: -1.5deg; }
-.home-hero[data-side="on"] .stack > * { rotate: 0deg; }
-.stack > * { transition: rotate var(--dur-long) var(--ease-in-out); }
-.side { display: inline-flex; gap: var(--space-3xs); margin-top: var(--space-xl); padding: var(--space-3xs); border: 1px solid var(--hero-ink); border-radius: var(--radius-pill); }
-.side button { min-height: 44px; padding: 0 var(--space-lg); border: 0; border-radius: var(--radius-pill); background: transparent; color: var(--hero-ink); font: 600 var(--text-md)/1 var(--font-body); cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out); }
-.side button:hover { background: color-mix(in oklab, var(--hero-ink) 12%, transparent); }
-.side button[aria-pressed="true"] { background: var(--hero-ink); color: var(--hero-bg); }
-.side button:active { transform: translateY(1px); }
-.side button:focus-visible { outline: 2px solid var(--hero-ink); outline-offset: 3px; }
-.side button:disabled { opacity: 0.55; cursor: not-allowed; }
-html:not(.js) .side { display: none; }
-.serif-line { margin-top: var(--space-lg); font: italic 400 clamp(2.25rem, 4.4vw, 4.25rem)/1.06 var(--font-serif); letter-spacing: -0.01em; max-width: 21ch; }
-.chip { display: inline-block; height: 0.8em; width: auto; aspect-ratio: 16 / 9; vertical-align: -0.06em; border-radius: 0.1em; image-rendering: pixelated; outline: 2px solid var(--hero-ink); outline-offset: -1px; }
-.home-hero .actions { margin-top: var(--space-xl); }
-.home-hero .btn { background: var(--hero-ink); color: var(--hero-btn-ink); border-color: var(--hero-ink); }
-.home-hero .btn:hover { background: var(--hero-hover); border-color: var(--hero-hover); }
-.home-hero .btn--quiet { background: transparent; color: var(--hero-ink); border-color: var(--hero-ink); }
-.home-hero .btn--quiet:hover { background: color-mix(in oklab, var(--hero-ink) 12%, transparent); }
-.giant { max-width: 1520px; margin: var(--space-xl) auto 0; padding-inline: var(--gutter); height: 0.8em; overflow: hidden; font: 800 min(10.4vw, 10rem)/1 var(--font-display); letter-spacing: -0.03em; white-space: nowrap; color: var(--hero-ink); }
-.giant__line { display: block; }
-.js .giant__line { animation: rise 0.8s var(--ease-out) both; }
-@keyframes rise { from { opacity: 0; transform: translateY(40%); } to { opacity: 1; transform: none; } }
-.reel-band { background: var(--color-paper); color: var(--color-ink); padding-block: var(--space-2xl); }
+/* the intro: a short green band, so the first project starts on the first screen */
+.intro { background: var(--color-field); color: var(--color-field-ink); --color-ink: var(--color-field-ink); --color-ink-2: var(--color-field-ink); --color-focus: var(--color-field-ink); }
+.intro__body { display: grid; gap: var(--space-lg); padding-block: var(--space-xl) var(--space-2xl); }
+.intro h1 { font: 800 min(10.4vw, 10rem)/0.86 var(--font-display); letter-spacing: -0.03em; white-space: nowrap; }
+.js .intro h1 { animation: rise 0.8s var(--ease-out) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(24%); } to { opacity: 1; transform: none; } }
+.intro__line { max-width: 40ch; font: 600 var(--text-xl)/1.3 var(--font-body); letter-spacing: -0.01em; }
 
-.reel { overflow: hidden; padding-bottom: var(--space-md); }
-.reel__track { display: flex; gap: var(--space-sm); width: max-content; }
-.js .reel__track { transform: translateX(var(--reel, 0px)); }
-.reel__item { flex: 0 0 auto; width: clamp(240px, 24vw, 380px); margin: 0; }
-.reel__item img { width: 100%; height: auto; aspect-ratio: 16 / 9; image-rendering: pixelated; border-radius: var(--radius-card); }
-.reel__item--fh { aspect-ratio: 16 / 9; display: grid; align-content: center; gap: var(--space-2xs); padding: var(--space-lg); background: var(--fh-black); color: var(--fh-white); border-radius: var(--radius-card); }
-.reel__item--fh b { font: 400 var(--text-3xl)/1 var(--font-body); font-variant-numeric: tabular-nums; }
-.reel__item--fh span { color: var(--fh-grey); font-size: var(--text-sm); }
+/* one panel per project, in that project's colours: what it is, the downloads, then the pictures */
+.feature { padding-block: var(--section-gap-s); }
+.feature__in { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl); align-items: center; }
+.feature--flip .feature__in { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.feature--flip .feature__text { order: 2; }
+.feature__kind { font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-accent); }
+.feature h2 { margin-top: var(--space-sm); font: 600 var(--text-display)/0.95 var(--font-head); letter-spacing: -0.01em; }
+.feature h2 a { text-decoration: none; }
+.feature h2 a:hover { text-decoration: underline; text-decoration-thickness: 0.06em; text-underline-offset: 0.12em; }
+.world-pips.feature h2 { color: var(--color-accent); }
+.world-focus.feature h2 { letter-spacing: -0.045em; }
+.feature__desc { margin-top: var(--space-md); max-width: 32ch; font-size: var(--text-xl); line-height: 1.35; }
+.feature .actions { margin-top: var(--space-xl); }
+.feature__note { margin-top: var(--space-sm); font-size: var(--text-sm); color: var(--color-muted); }
+.more { display: inline-flex; align-items: center; min-height: 44px; margin-top: var(--space-md); font-weight: 600; color: var(--color-accent); text-underline-offset: 0.2em; }
+.more::after { content: "\2192"; margin-left: 0.4em; transition: transform var(--dur-short) var(--ease-out); }
+.more:hover::after { transform: translateX(4px); }
+.feature__media { display: grid; gap: var(--space-sm); text-decoration: none; transition: transform var(--dur-short) var(--ease-out); }
+.feature__media:hover { transform: translateY(-4px); }
+.feature__media:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 6px; }
+.feature__media img { width: 100%; outline: 1px solid color-mix(in oklab, var(--color-ink) 14%, transparent); outline-offset: -1px; }
+.media-pips { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.media-pips img { aspect-ratio: 16 / 9; object-fit: cover; image-rendering: pixelated; border-radius: var(--radius-card); }
+.media-pips img:first-child { grid-column: 1 / -1; }
+.media-focus { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-md); align-items: start; }
+.media-focus img { aspect-ratio: 1 / 2; object-fit: cover; object-position: 50% 0; border-radius: 20px; }
+.media-focus img:nth-child(odd) { margin-top: var(--space-xl); }
 
-.about { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--space-2xl); align-items: start; }
-.portrait { display: none; aspect-ratio: 4 / 5; margin-bottom: var(--space-xl); border-radius: var(--radius-card); }
+/* about: Tyler's own words on wood, with room for his photo once there is one */
+.about-band { background: var(--color-wood); color: var(--color-wood-ink); --color-ink: var(--color-wood-ink); --color-ink-2: var(--color-wood-ink); --color-paper: var(--color-wood); --color-paper-2: color-mix(in oklab, var(--color-wood-ink) 12%, var(--color-wood)); --color-focus: var(--color-wood-ink); }
+.about { display: grid; gap: var(--space-2xl); align-items: start; }
+.about:has(.portrait img) { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); }
+.portrait { display: none; aspect-ratio: 4 / 5; border-radius: var(--radius-card); }
 .portrait:has(img) { display: block; }
-.say { font: 600 clamp(1.75rem, 3vw, 2.875rem)/1.3 var(--font-body); letter-spacing: -0.01em; max-width: 32ch; }
-.js .say .w { opacity: var(--o, 1); transition: opacity var(--dur-short) linear; }
-
-.week { background: var(--color-wood); color: var(--color-wood-ink); }
-.week .head { color: var(--color-wood-ink); }
-.week__rows { margin-top: var(--space-2xl); display: grid; }
-.week__row { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--gap-columns); align-items: baseline; padding-block: var(--space-xl); border-top: 1px solid color-mix(in oklab, var(--color-wood-ink) 30%, transparent); color: var(--color-wood-ink); text-decoration: none; }
-a.week__row { transition: background-color var(--dur-short) var(--ease-out); }
-a.week__row:hover { background: color-mix(in oklab, var(--color-wood-ink) 8%, transparent); }
-a.week__row:focus-visible { outline: 2px solid var(--color-wood-ink); outline-offset: 4px; }
-.week__word { font: 800 clamp(3rem, 8vw, 7.5rem)/0.95 var(--font-display); letter-spacing: -0.02em; }
-.week__row p { font-size: var(--text-lead); line-height: 1.45; max-width: 46ch; }
-
-.onward { background: var(--color-field); color: var(--color-field-ink); }
-.onward__link { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-2xl); align-items: center; padding-block: var(--space-3xl); color: var(--color-field-ink); text-decoration: none; }
-.onward__link:focus-visible { outline: 2px solid var(--color-field-ink); outline-offset: 6px; }
-.onward__word { font: 800 clamp(3.5rem, 9vw, 8.5rem)/0.92 var(--font-display); letter-spacing: -0.02em; text-decoration: underline; text-decoration-thickness: 0.06em; text-underline-offset: 0.12em; transition: text-decoration-color var(--dur-short) var(--ease-out); }
-.onward__link:hover .onward__word { text-decoration-color: transparent; }
-.onward__link p { margin-top: var(--space-md); font-size: var(--text-lead); }
-.onward__tiles { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-sm); }
-.onward__tiles img, .onward__tiles .reel__item--fh { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; image-rendering: pixelated; border-radius: var(--radius-card); }
-
-/* ---------- projects index ---------- */
-.index-head { padding-block: var(--space-3xl) var(--section-gap-s); }
-.index-head h1 { font: 800 min(11vw, 10rem)/0.9 var(--font-display); letter-spacing: -0.02em; }
-.index-head p { margin-top: var(--space-lg); font-size: var(--text-xl); color: var(--color-ink-2); max-width: 46ch; }
-.tiles { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--gap-columns); padding-bottom: var(--section-gap); }
-.tile { display: grid; grid-template-rows: auto 1fr; text-decoration: none; color: inherit; border-radius: var(--radius-card); overflow: hidden; transition: transform var(--dur-short) var(--ease-out); }
-.tile:hover { transform: translateY(-4px); }
-.tile:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; }
-.tile__pic { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
-.tile__pic img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
-.tile__body { display: grid; gap: var(--space-sm); align-content: start; padding: var(--space-xl); }
-.tile__body h2 { font-size: var(--text-section); line-height: 1; }
-.tile__body p { font-size: var(--text-lead); line-height: 1.45; max-width: 46ch; }
-.tile__body dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: var(--space-2xs) var(--space-md); margin: var(--space-sm) 0 0; font-size: var(--text-sm); }
-.tile__body dt { font-weight: 600; }
-.tile__body dd { margin: 0; }
-.tile--pips { background: var(--pp-plum); color: var(--color-wood-ink); }
-.tile--pips h2 { font-family: var(--font-outlier); font-weight: 600; color: var(--pp-gold); }
-.tile--focus { background: var(--fh-black); color: var(--fh-white); outline: 1px solid var(--fh-line); outline-offset: -1px; }
-.tile--focus h2 { font-family: var(--font-body); font-weight: 600; }
-.tile--focus dd, .tile--focus p { color: var(--fh-grey); }
-.tile--focus .tile__pic { display: grid; place-items: center; background: var(--fh-black); border-bottom: 1px solid var(--fh-line); }
-
-/* the rebuilt Focus Home screens */
-.fh { display: flex; flex-direction: column; gap: var(--space-md); padding: var(--space-xl); background: var(--fh-black); color: var(--fh-white); text-align: left; }
-.fh__clock { font: 400 clamp(3rem, 4.5vw, 4.5rem)/1 var(--font-body); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
-.fh__sub { color: var(--fh-grey); font-size: var(--text-sm); }
-.fh__apps { display: grid; gap: var(--space-xs); margin: 0; padding: 0; list-style: none; font-size: var(--text-xl); line-height: 1.2; }
-.fh__pill { align-self: flex-start; display: inline-flex; align-items: center; min-height: 40px; padding: 0 var(--space-lg); border: 1px solid var(--fh-white); border-radius: var(--radius-pill); font-size: var(--text-sm); }
-.tile--focus .fh { width: min(320px, 70%); padding: var(--space-lg) 0; }
-.tile--focus .fh__apps { font-size: var(--text-lg); }
+.about .head { max-width: 16ch; }
+.about .say { margin-top: var(--space-lg); max-width: 46ch; font-size: var(--text-xl); line-height: 1.45; }
+.about .actions { margin-top: var(--space-xl); }
 
 /* ---------- project pages, shared ---------- */
 .p-hero { position: relative; overflow: hidden; }
-.p-hero__inner { position: relative; z-index: 2; display: grid; align-content: end; gap: var(--space-lg); min-height: min(calc(100svh - var(--nav-h)), 860px); padding-block: var(--space-3xl) var(--space-2xl); }
+.p-hero__inner { position: relative; z-index: 2; display: grid; align-content: end; gap: var(--space-lg); min-height: min(calc(100svh - var(--nav-h) - 56px), 800px); padding-block: var(--space-3xl) var(--space-2xl); }
 .p-hero h1 { font: 600 min(10vw, 8.5rem)/0.95 var(--font-head); letter-spacing: -0.01em; max-width: 12ch; }
-.p-hero .lede { font-size: var(--text-xl); line-height: 1.35; max-width: 30ch; color: var(--color-ink); }
+.p-hero .lede { font-size: var(--text-xl); line-height: 1.35; max-width: 32ch; color: var(--color-ink); }
 .p-hero .btn { background: var(--color-accent); color: var(--color-accent-ink); border-color: var(--color-accent); }
 .p-hero .btn:hover { background: var(--color-ink); border-color: var(--color-ink); }
 .p-hero .btn--quiet { background: transparent; color: var(--color-ink); border-color: var(--color-ink-2); }
@@ -230,7 +208,6 @@ a.week__row:focus-visible { outline: 2px solid var(--color-wood-ink); outline-of
 
 .split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--space-2xl); align-items: center; }
 .split--flip { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
-.split--top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
 .steps { margin: var(--space-xl) 0 0; padding: 0; list-style: none; counter-reset: step; display: grid; gap: var(--space-md); }
 .steps li { counter-increment: step; display: grid; grid-template-columns: 2.5rem minmax(0, 1fr); gap: var(--space-sm); font-size: var(--text-lg); line-height: 1.4; }
 .steps li::before { content: counter(step); font: 600 var(--text-xl)/1.1 var(--font-head); color: var(--color-accent); }
@@ -253,7 +230,6 @@ a.week__row:focus-visible { outline: 2px solid var(--color-wood-ink); outline-of
 .switch__tabs button[aria-selected="true"] { background: var(--color-paper-3); color: var(--color-accent); border-color: var(--color-accent); }
 .switch__tabs button:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 .switch__tabs button:active { transform: translateY(1px); }
-.switch__tabs button:disabled { opacity: 0.55; cursor: not-allowed; }
 .panel { margin-top: var(--space-xl); }
 .panel h3 { font: 600 var(--text-2xl)/1.1 var(--font-head); }
 .panel ul { margin: var(--space-md) 0 0; padding-left: var(--space-lg); display: grid; gap: var(--space-xs); font-size: var(--text-lead); color: var(--color-ink-2); }
@@ -277,75 +253,16 @@ html:not(.js) .panel[hidden] { display: block !important; }
 .loop-toggle:hover { background: var(--color-paper-2); }
 .loop-toggle:active { transform: translateY(1px); }
 .loop-toggle:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
-.loop-toggle:disabled { opacity: 0.55; cursor: not-allowed; }
 html:not(.js) .loop-toggle { display: none; }
-.shots { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-sm); }
 .band-plum { background: var(--color-paper-2); color: var(--color-ink); }
 
-/* ---------- Focus Home ---------- */
-.page-focus .p-hero__inner { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: center; align-content: center; }
-.page-focus .p-hero h1 { font-weight: 600; letter-spacing: -0.03em; }
-.fh-hero { border: 1px solid var(--color-rule); border-radius: var(--radius-card); min-height: 560px; justify-content: flex-start; }
-.fh-hero .fh__pill { margin-top: auto; }
-.screens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--gap-columns); margin-top: var(--space-2xl); }
-.screens figure { margin: 0; }
-.screens .fh { min-height: 520px; border: 1px solid var(--color-rule); border-radius: var(--radius-card); }
-.screens figcaption { margin-top: var(--space-sm); color: var(--color-muted); font-size: var(--text-sm); }
-.fh__search { min-height: 40px; display: flex; align-items: center; padding: 0 var(--space-md); border: 1px solid var(--fh-line); border-radius: var(--radius-pill); color: var(--fh-grey); font-size: var(--text-sm); }
-.fh__wait { font: 400 clamp(3.5rem, 5vw, 5rem)/1 var(--font-body); font-variant-numeric: tabular-nums; margin-top: var(--space-xl); }
-.choices { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin: var(--space-lg) 0 0; padding: 0; list-style: none; }
-.choices li { min-height: 44px; display: inline-flex; align-items: center; padding: 0 var(--space-lg); border: 1px solid var(--color-rule); border-radius: var(--radius-pill); }
-.choices li.is-default { background: var(--color-ink); color: var(--color-paper); border-color: var(--color-ink); }
-
-/* ---------- projects collage: a continuous canvas of the work ---------- */
-.collage { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: 72px; gap: var(--space-md); padding-bottom: var(--section-gap); }
-.ct { position: relative; display: block; overflow: hidden; border-radius: var(--radius-card); color: inherit; text-decoration: none; transition: transform var(--dur-short) var(--ease-out); }
-.ct:hover { transform: translateY(-4px); }
-.ct:active { transform: translateY(-1px); }
-.ct:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; }
-.js .ct { animation: settle 0.6s var(--ease-out) both; animation-delay: calc(var(--i, 0) * 50ms); }
-@keyframes settle { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-.ct--pic img { width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated; }
-.ct--phone { background: var(--es-walnut); }
-.ct--phone img { object-position: 50% 0; image-rendering: auto; }
-.reel__item--phone { width: calc(clamp(240px, 24vw, 380px) * 9 / 32); }
-.reel__item--phone img { aspect-ratio: 1 / 2; image-rendering: auto; }
-.onward__phone { object-position: 50% 0; image-rendering: auto; }
-.ct--title { display: grid; align-content: end; gap: var(--space-sm); padding: var(--space-xl); }
-.ct--title h2 { font-size: var(--text-section); line-height: 1; }
-.ct--title p { font-size: var(--text-lead); line-height: 1.4; max-width: 46ch; }
-.ct__go { font-weight: 600; text-decoration: underline; text-underline-offset: 0.2em; }
-.ct--pips { background: var(--pp-plum); color: var(--color-wood-ink); }
-.ct--pips h2 { font-family: var(--font-outlier); font-weight: 600; color: var(--pp-gold); }
-.ct--focus { background: var(--fh-black); color: var(--fh-white); outline: 1px solid var(--fh-line); outline-offset: -1px; }
-.ct--focus h2 { font-family: var(--font-body); font-weight: 600; }
-.ct--focus p { color: var(--fh-grey); }
-.ct--screen { background: var(--fh-black); outline: 1px solid var(--fh-line); outline-offset: -1px; }
-.ct--screen .fh { height: 100%; }
-.ct--pips { grid-column: 1 / 6; grid-row: 1 / 5; }
-.ct--a1 { grid-column: 6 / 13; grid-row: 1 / 6; }
-.ct--a2 { grid-column: 1 / 6; grid-row: 5 / 9; }
-.ct--a3 { grid-column: 6 / 10; grid-row: 6 / 9; }
-.ct--a4 { grid-column: 10 / 13; grid-row: 6 / 9; }
-.ct--f1 { grid-column: 1 / 5; grid-row: 10 / 17; }
-.ct--focus { grid-column: 5 / 13; grid-row: 10 / 13; }
-.ct--f2 { grid-column: 5 / 9; grid-row: 13 / 17; }
-.ct--f3 { grid-column: 9 / 13; grid-row: 13 / 17; }
-
-/* ---------- Pips & Peril: the pixel rail and the dice roller ---------- */
-.rail { position: fixed; right: var(--space-sm); top: 50%; translate: 0 -50%; z-index: var(--z-sticky); display: grid; gap: var(--space-2xs); }
-.rail a { display: grid; place-items: center; width: 32px; height: 32px; font-size: 0; color: transparent; overflow: hidden; }
-.rail a::before { content: ""; width: 10px; height: 10px; border: 2px solid var(--color-accent); transition: background-color var(--dur-short) var(--ease-out); }
-.rail a:hover::before { background: var(--color-paper-3); }
-.rail a[aria-current="true"]::before { background: var(--color-accent); }
-.rail a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 0; }
+/* the dice roller */
 .roller { display: grid; gap: var(--space-lg); justify-items: start; }
 .roller__dice { display: flex; flex-wrap: wrap; gap: var(--space-md); align-items: center; }
 .die { width: 96px; height: 96px; display: grid; place-items: center; padding: 0; border: 3px solid var(--color-ink); border-radius: 6px; background: var(--color-ink); color: var(--color-paper); cursor: pointer; transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
 button.die:hover { border-color: var(--color-accent); }
 button.die:active { transform: translateY(2px); }
 button.die:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 4px; }
-button.die:disabled { opacity: 0.55; cursor: not-allowed; }
 .die[aria-pressed="true"] { background: var(--color-accent); border-color: var(--color-accent); }
 .die--mod { background: var(--color-paper-3); color: var(--color-accent); border-color: var(--color-accent); font: 600 var(--text-2xl)/1 var(--font-outlier); cursor: default; }
 .die__face { width: 64px; height: 64px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(0, 1fr)); }
@@ -356,46 +273,23 @@ button.die:disabled { opacity: 0.55; cursor: not-allowed; }
 .roller__sum { min-height: 2.7em; font: 600 var(--text-xl)/1.35 var(--font-body); font-variant-numeric: tabular-nums; max-width: 34ch; }
 html:not(.js) .roller { display: none; }
 
-/* ---------- Focus Home: the 1.7 dev build in its own Walnut and Sage ---------- */
+/* ---------- Focus Home: a centred hero, a pinned phone story, a bento of highlights, a version comparison ---------- */
 .build-tag { display: inline-flex; align-items: center; min-height: 40px; margin-bottom: var(--space-lg); padding: 0 var(--space-md); border: 1px solid var(--color-accent); border-radius: var(--radius-pill); color: var(--color-accent); font-size: var(--text-sm); font-weight: 600; text-decoration: none; transition: background-color var(--dur-short) var(--ease-out); }
 .build-tag:hover { background: var(--color-paper-2); }
 .build-tag:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
-.phone { margin: 0; }
 .phone__shot { aspect-ratio: 1 / 2; border-radius: 24px; outline: 1px solid var(--color-rule); outline-offset: -1px; }
 .phone__shot > img { object-position: 50% 0; }
-.page-focus .p-hero .phone { width: min(300px, 100%); justify-self: center; }
-.phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2xl) var(--gap-columns); margin-top: var(--space-2xl); }
-.versions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap-columns); margin-top: var(--space-2xl); }
-.version { display: grid; align-content: start; gap: var(--space-md); padding: var(--space-xl); border: 1px solid var(--color-rule); border-radius: var(--radius-card); }
-.version--dev { border-color: var(--color-accent); }
-.version h3 { font: 600 var(--text-2xl)/1.1 var(--font-body); }
-.version ul { margin: 0; padding-left: var(--space-lg); display: grid; gap: var(--space-xs); font-size: var(--text-lead); color: var(--color-ink-2); }
-.text-link { justify-self: start; color: var(--color-accent); font-weight: 600; text-underline-offset: 0.2em; }
-.text-link:hover { color: var(--color-ink); }
 .band-espresso { background: var(--color-paper-2); color: var(--color-ink); }
-
-/* ---------- Focus Home, after Apple's product pages: a sticky product bar, a centred hero, a bento of highlights, a pinned phone story, a model comparison ---------- */
-.subnav { position: sticky; top: 0; z-index: var(--z-sticky-nav); background: var(--es-glass); backdrop-filter: saturate(1.4) blur(18px); border-bottom: 1px solid var(--color-rule); }
-.subnav__in { display: flex; align-items: center; gap: var(--space-lg); min-height: 56px; }
-.subnav__name { margin-right: auto; font: 600 var(--text-lg)/1 var(--font-body); letter-spacing: -0.01em; color: var(--color-ink); text-decoration: none; }
-.subnav__links { display: flex; gap: var(--space-lg); margin: 0; padding: 0; list-style: none; }
-.subnav__links a { font-size: var(--text-sm); color: var(--color-ink-2); text-decoration: none; transition: color var(--dur-short) var(--ease-out); }
-.subnav__links a:hover { color: var(--color-ink); }
-.pill { display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-lg); border-radius: var(--radius-pill); background: var(--color-accent); color: var(--color-accent-ink); font: 600 var(--text-sm)/1 var(--font-body); white-space: nowrap; text-decoration: none; transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out); }
-.pill:hover { background: var(--color-ink); }
-.pill:active { transform: translateY(1px); }
-.pill:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
-.pill--lg { min-height: 52px; padding: 0 var(--space-xl); font-size: var(--text-md); }
 
 .ap-hero { overflow: hidden; padding-top: var(--space-2xl); text-align: center; }
 .ap-hero__text { display: grid; justify-items: center; }
-.ap-hero .build-tag { margin-bottom: var(--space-lg); }
 .ap-hero h1 { max-width: none; font: 600 clamp(3.5rem, 8.5vw, 8rem)/0.95 var(--font-body); letter-spacing: -0.05em; }
-.ap-sub { max-width: 22ch; margin-top: var(--space-md); font: 600 clamp(1.5rem, 2.6vw, 2.4rem)/1.12 var(--font-body); letter-spacing: -0.025em; color: var(--color-ink-2); }
-.ap-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-xl); margin-top: var(--space-xl); }
+.ap-sub { max-width: 22ch; margin-top: var(--space-md); font: 600 clamp(1.5rem, 2.6vw, 2.4rem)/1.12 var(--font-body); letter-spacing: -0.025em; color: var(--color-ink); }
+.ap-lede { max-width: 46ch; margin-top: var(--space-md); font-size: var(--text-lead); line-height: 1.45; color: var(--color-ink-2); }
+.ap-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-md) var(--space-xl); margin-top: var(--space-xl); }
 .ap-link { color: var(--color-accent); font-weight: 600; white-space: nowrap; text-decoration: none; text-underline-offset: 0.2em; }
 .ap-link:hover { text-decoration: underline; }
-.ap-fan { display: flex; justify-content: center; align-items: flex-start; gap: var(--space-xl); margin-top: var(--space-xl); height: 420px; }
+.ap-fan { display: flex; justify-content: center; align-items: flex-start; gap: var(--space-xl); margin-top: var(--space-2xl); height: 420px; }
 .ap-fan__main { width: 300px; flex: 0 0 auto; }
 .ap-fan__side { width: 230px; flex: 0 0 auto; margin-top: var(--space-3xl); }
 .js .ap-fan > * { animation: rise-in 0.9s var(--ease-out) both; animation-delay: calc(var(--i, 0) * 120ms); }
@@ -444,41 +338,25 @@ html:not(.js) .story__steps { grid-column: 1 / -1; }
 .tick { width: 24px; height: 24px; margin-inline: auto; color: var(--color-accent); }
 .no { color: var(--color-ink-2); font-size: var(--text-sm); }
 
-/* ---------- Focus Home: the scan demo ---------- */
-.demo { display: grid; gap: var(--space-md); }
-.demo__view { display: flex; flex-direction: column; gap: var(--space-md); }
-.demo__controls { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
-html:not(.js) .demo__controls { display: none; }
-
 /* ---------- motion off ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .js .giant__line, .js .ct, .js .is-rolling .die__face, .js .ap-fan > * { animation: none; opacity: 1; transform: none; }
+  .js .intro h1, .js .is-rolling .die__face, .js .ap-fan > * { animation: none; opacity: 1; transform: none; }
   .story__phone img { transition: none; }
-  .home-hero { transition: none; }
-  .ct:hover { transform: none; }
-  .js .reel__track { transform: none; }
-  .js .say .w { opacity: 1; }
+  .feature__media:hover { transform: none; }
   .js .pan.is-panning { animation: none; }
   .loop-toggle { display: none; }
-  .tile:hover { transform: none; }
 }
 
 /* ---------- smaller screens ---------- */
 @media (max-width: 60rem) {
-  .nav { row-gap: var(--space-xs); padding-block: var(--space-sm); }
+  .nav { row-gap: 0; padding-block: var(--space-xs); }
   .nav > nav { order: 3; width: 100%; overflow-x: auto; }
-  .about, .split, .split--flip, .onward__link, .tiles, .footer__row, .page-focus .p-hero__inner { grid-template-columns: minmax(0, 1fr); }
-  .week__row, .rows > div { grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
-  .screens { grid-template-columns: minmax(0, 1fr); }
-  .hero-body { grid-template-columns: minmax(0, 1fr); }
-  .stack { display: none; }
-  .collage { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; }
-  .collage > * { grid-column: auto; grid-row: auto; }
-  .collage > .ct--title, .collage > .ct--a1 { grid-column: 1 / -1; }
-  .ct--pic { aspect-ratio: 16 / 9; }
-  .ct--screen { aspect-ratio: 3 / 4; }
-  .rail { display: none; }
-  .phones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .feature__in, .feature--flip .feature__in, .about:has(.portrait img), .split, .split--flip, .footer__row { grid-template-columns: minmax(0, 1fr); }
+  .feature--flip .feature__text { order: 0; }
+  .feature__in { gap: var(--space-xl); }
+  .portrait { max-width: 320px; }
+  .rows > div { grid-template-columns: minmax(0, 1fr); gap: var(--space-sm); }
+  .getit__grid { grid-template-columns: minmax(0, 1fr); }
   .subnav__links { display: none; }
   .ap-fan { height: 420px; gap: var(--space-sm); }
   .ap-fan__main { width: 210px; }
@@ -495,14 +373,19 @@ html:not(.js) .demo__controls { display: none; }
   .js .story__inline { display: block; }
   .js .story__steps li:not(.is-on) h3 { color: var(--color-ink); }
   .story__steps li { min-height: 0; padding-block: var(--space-xl); }
-  .versions { grid-template-columns: minmax(0, 1fr); }
-  .fh-hero { min-height: 480px; }
   .pips-scrim { background: linear-gradient(0deg, color-mix(in oklab, var(--color-paper) 94%, transparent) 0%, color-mix(in oklab, var(--color-paper) 70%, transparent) 50%, transparent 90%); }
 }
 @media (max-width: 40rem) {
   .table { font-size: var(--text-md); }
-  .shots { grid-template-columns: minmax(0, 1fr); }
-  .giant { margin-top: var(--space-lg); }
+  .table th, .table td { padding-right: var(--space-sm); }
+  .intro__body { padding-block: var(--space-lg) var(--space-xl); }
+  .intro__line { font-size: var(--text-lg); }
+  .feature__desc, .about .say { font-size: var(--text-lg); }
+  .feature .actions .btn { flex: 1 1 auto; justify-content: center; }
+  .media-focus { gap: var(--space-xs); }
+  .media-focus img { border-radius: 12px; }
+  .media-focus img:nth-child(odd) { margin-top: var(--space-lg); }
+  .getit__card { padding: var(--space-lg); }
 
   /* Pips & Peril: one swipeable row of castle tabs, dice that fit a 320px screen */
   .switch__tabs { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(-1 * var(--gutter)); padding: var(--space-3xs) var(--gutter); scrollbar-width: none; overscroll-behavior-x: contain; }
@@ -528,105 +411,92 @@ html:not(.js) .demo__controls { display: none; }
 
 /* Touch screens: every link and control is at least 44px tall, so thumbs land where they aim */
 @media (pointer: coarse), (max-width: 60rem) {
-  .wordmark, .nav__links a, .nav__mail, .subnav__name, .ap-link, .text-link, .footer a, .next a span, .skip { display: inline-flex; align-items: center; min-height: 44px; }
+  .wordmark, .nav__links a, .nav__mail, .subnav__name, .ap-link, .footer a, .next a span, .skip { display: inline-flex; align-items: center; min-height: 44px; }
   .footer a { min-width: 44px; }
   .build-tag { min-height: 44px; }
   .nav__links { gap: var(--space-md); }
   .footer ul { gap: 0; }
-  .footer__note { margin-top: var(--space-md); }
+  .footer__note { margin-top: var(--space-lg); }
 }
 
 </style>
 </head>
 <body class="page-home">
 <a class="skip" href="#main">Skip to content</a>
-<main id="main">
-  <section class="home-hero" data-side="off" aria-labelledby="name">
-    <div class="wrap">
-      <div class="nav">
+<header class="intro">
+  <div class="wrap">
+    <div class="nav">
   <a class="wordmark" href="index.html" aria-label="Tyler Wedderburn, home" aria-current="page">Tyler Wedderburn</a>
   <nav aria-label="Pages"><ul class="nav__links">
-    <li><a href="projects.html">Projects</a></li>
     <li><a href="pips-and-peril.html">Pips &amp; Peril</a></li>
     <li><a href="focus-home.html">Focus Home</a></li>
+    <li><a href="#about">About</a></li>
   </ul></nav>
   <a class="nav__mail" href="mailto:T1D0@pm.me">T1D0@pm.me</a>
 </div>
-      <div class="hero-body">
-      <div>
-      <div class="side" role="group" aria-label="Which side of the week">
-        <button type="button" aria-pressed="true" data-side-btn="off">Off shift</button>
-        <button type="button" aria-pressed="false" data-side-btn="on">On shift</button>
-      </div>
-      <p class="serif-line" aria-live="polite">
-        <span data-side-text="off">Off shift, I build <img class="chip" src="img/shots/cards-stack.png" width="640" height="360" alt="" fetchpriority="high"> dice games and phones that stay quiet.</span>
-        <span data-side-text="on" hidden>On shift, I cook for the Canadian Armed Forces in Manitoba.</span>
-      </p>
-      <div class="actions">
-        <a class="btn" href="projects.html">See the projects</a>
-        <a class="btn btn--quiet" href="mailto:T1D0@pm.me">Email Tyler</a>
-      </div>
-      </div>
-      <div class="stack" aria-hidden="true">
-        <img class="stack__a" src="img/pips-title.png" width="640" height="360" alt="">
-        <img class="stack__b" src="img/fh/home-walnut.png" width="540" height="1080" alt="">
-        <img class="stack__c" src="img/shots/treasury-roll.png" width="640" height="360" alt="">
-      </div>
-      </div>
+    <div class="intro__body">
+      <h1 id="name">Tyler Wedderburn</h1>
+      <p class="intro__line">I’m a military cook in Manitoba. Off shift, I build games and Android apps. Two are out now, and both are free to download.</p>
     </div>
-    <h1 class="giant" id="name"><span class="giant__line">Tyler Wedderburn</span></h1>
-  </section>
-
-  <section class="reel-band" aria-label="The work, in motion">
-    <div class="reel" data-reel>
-      <div class="reel__track">
-        <figure class="reel__item"><img src="img/shots/treasury-roll.png" width="640" height="360" alt="Pips &amp; Peril: a roll of 17 against three living coins in the Coin Treasury" loading="lazy"></figure>
-        <figure class="reel__item"><img src="img/shots/cards-incoming.png" width="640" height="360" alt="Pips &amp; Peril: a stacked king of cards with 36 damage incoming" loading="lazy"></figure>
-        <figure class="reel__item reel__item--phone"><img src="img/fh/home-mocha.png" width="540" height="1080" alt="Focus Home: the home screen in the Mocha theme" loading="lazy"></figure>
-        <figure class="reel__item reel__item--phone"><img src="img/fh/drawer.png" width="540" height="1080" alt="Focus Home: the All apps drawer" loading="lazy"></figure>
-        <figure class="reel__item"><img src="img/shots/jacks-hit.png" width="640" height="360" alt="Pips &amp; Peril: a 14 point hit on a Jackstone in the Jackstone Keep" loading="lazy"></figure>
-        <figure class="reel__item"><img src="img/shots/select.png" width="640" height="360" alt="Pips &amp; Peril: the hero select screen" loading="lazy"></figure>
-        <figure class="reel__item"><img src="img/shots/treasury-block.png" width="640" height="360" alt="Pips &amp; Peril: a full 100% block against a coin's attack" loading="lazy"></figure>
-        <figure class="reel__item"><img src="img/shots/jacks-block.png" width="640" height="360" alt="Pips &amp; Peril: a 90% block in the Jackstone Keep" loading="lazy"></figure>
+  </div>
+</header>
+<main id="main">
+  <div id="projects">
+    <section class="feature world-pips" id="pips" aria-labelledby="f-pips">
+      <div class="wrap feature__in">
+        <div class="feature__text">
+          <p class="feature__kind">Game · Android, Windows, Steam Deck</p>
+          <h2 id="f-pips"><a href="pips-and-peril.html">Pips &amp; Peril</a></h2>
+          <p class="feature__desc">A retro dice roguelike. Pick a hero, roll, hold and reroll, and fight through three castles to topple their kings.</p>
+          <div class="actions" role="group" aria-label="Download Pips &amp; Peril 1.0.0">
+            <a class="btn btn--get" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril_1.apk">Android <span>49 MB</span></a>
+            <a class="btn btn--get" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril-Windows.zip">Windows <span>33 MB</span></a>
+            <a class="btn btn--get" href="https://github.com/Twedderburn/Pips-and-Peril/releases/download/v1.0.0/PipsAndPeril-SteamDeck_1.zip">Steam Deck <span>27 MB</span></a>
+          </div>
+          <p class="feature__note">Version 1.0.0. The buttons download straight from GitHub.</p>
+          <a class="more" href="pips-and-peril.html">See how it plays</a>
+        </div>
+        <a class="feature__media media-pips" href="pips-and-peril.html" aria-label="Pips &amp; Peril: see how it plays">
+          <img src="img/pips-title.png" width="640" height="360" alt="Pips &amp; Peril title art: four heroes on a ridge facing three castles" fetchpriority="high">
+          <img src="img/shots/treasury-roll.png" width="640" height="360" alt="Gameplay: a roll of 17 against three living coins in the Coin Treasury" loading="lazy">
+          <img src="img/shots/cards-stack.png" width="640" height="360" alt="Gameplay: two cards stack into a king in the House of Cards" loading="lazy">
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section" aria-labelledby="who">
+    <section class="feature feature--flip world-focus" id="focus" aria-labelledby="f-focus">
+      <div class="wrap feature__in">
+        <div class="feature__text">
+          <p class="feature__kind">App · Android 10 and later</p>
+          <h2 id="f-focus"><a href="focus-home.html">Focus Home</a></h2>
+          <p class="feature__desc">A home screen that opens only your favorite apps. To get the rest back, you scan a QR key you hid somewhere inconvenient.</p>
+          <div class="actions">
+            <a class="btn btn--get" href="https://github.com/Twedderburn/focushomePublic/releases/download/v1.6/FocusHome-1.6.apk">Download for Android <span>2.9 MB</span></a>
+          </div>
+          <p class="feature__note">Public release 1.6. The button downloads the APK straight from GitHub.</p>
+          <a class="more" href="focus-home.html">See how a day goes</a>
+        </div>
+        <a class="feature__media media-focus" href="focus-home.html" aria-label="Focus Home: see how a day goes">
+          <img src="img/fh/focus-mode.png" width="540" height="1080" alt="Focus mode: the clock, today's focus time and the favorites" loading="lazy">
+          <img src="img/fh/home-walnut.png" width="540" height="1080" alt="The home screen in Walnut with the Sage accent" loading="lazy">
+          <img src="img/fh/drawer.png" width="540" height="1080" alt="The All apps drawer with a search box" loading="lazy">
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <section class="section about-band" id="about" aria-labelledby="who">
     <div class="wrap about">
+      <div class="portrait" data-slot="portrait" data-alt="A photo of Tyler"></div>
       <div>
-        <div class="portrait" data-slot="portrait" data-alt="A photo of Tyler"></div>
         <h2 class="head" id="who">Kitchen first, then the keyboard.</h2>
-      </div>
-      <div>
-        <p class="say" data-say>I’m Tyler. I cook for the Canadian Armed Forces in Manitoba. Everything here is something I made on my own time: a dice game with three castles to clear, and a phone launcher that keeps me off my phone. My Christian faith runs through all of it.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section week" aria-labelledby="week">
-    <div class="wrap">
-      <h2 class="head" id="week">What fills the week.</h2>
-      <div class="week__rows">
-        <div class="week__row"><span class="week__word">Kitchen</span><p>Cook, Canadian Armed Forces. The day job.</p></div>
-        <a class="week__row" href="pips-and-peril.html"><span class="week__word">Games</span><p>Pips &amp; Peril, a dice roguelike built in Godot 4.3.</p></a>
-        <a class="week__row" href="focus-home.html"><span class="week__word">Apps</span><p>Focus Home, an Android launcher built in Kotlin.</p></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="onward" aria-label="Projects">
-    <div class="wrap">
-      <a class="onward__link" href="projects.html">
-        <div>
-          <span class="onward__word">See the projects</span>
-          <p>Two so far, both made off shift.</p>
+        <p class="say">I’m Tyler. I cook for the Canadian Armed Forces in Manitoba. Everything here is something I made on my own time: a dice game with three castles to clear, and a phone launcher that keeps me off my phone. My Christian faith runs through all of it.</p>
+        <p class="say">Tried one of them? Tell me what you liked and what broke.</p>
+        <div class="actions">
+          <a class="btn" href="mailto:T1D0@pm.me">Email T1D0@pm.me</a>
+          <a class="btn btn--quiet" href="https://github.com/Twedderburn">GitHub</a>
         </div>
-        <div class="onward__tiles">
-          <img src="img/pips-title.png" width="640" height="360" alt="Pips &amp; Peril title art: four heroes facing three castles" loading="lazy">
-          <img class="onward__phone" src="img/fh/focus-mode.png" width="540" height="1080" alt="Focus Home in focus mode" loading="lazy">
-        </div>
-      </a>
+      </div>
     </div>
   </section>
 </main>
@@ -634,7 +504,7 @@ html:not(.js) .demo__controls { display: none; }
   <div class="wrap">
     <div class="footer__row">
       <div><p class="footer__name">Tyler Wedderburn</p><p>Manitoba, Canada</p></div>
-      <ul><li><a href="index.html">Home</a></li><li><a href="projects.html">Projects</a></li><li><a href="pips-and-peril.html">Pips &amp; Peril</a></li><li><a href="focus-home.html">Focus Home</a></li></ul>
+      <ul><li><a href="index.html">Home</a></li><li><a href="pips-and-peril.html">Pips &amp; Peril</a></li><li><a href="focus-home.html">Focus Home</a></li></ul>
       <ul><li><a href="mailto:T1D0@pm.me">T1D0@pm.me</a></li><li><a href="https://github.com/Twedderburn">GitHub</a></li></ul>
     </div>
     <p class="footer__note">Pips &amp; Peril screenshots and art come from the game itself. Focus Home screenshots were captured from the 1.7 dev build; every screen shown is also in the public 1.6 release.</p>
@@ -643,26 +513,6 @@ html:not(.js) .demo__controls { display: none; }
 <script>
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // home: the off shift / on shift switch
-  const hero = document.querySelector('[data-side]');
-  if (hero) {
-    const btns = hero.querySelectorAll('[data-side-btn]');
-    btns.forEach((b) => b.addEventListener('click', () => {
-      const side = b.dataset.sideBtn;
-      hero.dataset.side = side;
-      btns.forEach((x) => x.setAttribute('aria-pressed', x === b));
-      hero.querySelectorAll('[data-side-text]').forEach((t) => { t.hidden = t.dataset.sideText !== side; });
-    }));
-  }
-
-  // Pips & Peril: the pixel rail marks the section in view
-  const rail = document.querySelector('[data-rail]');
-  if (rail) {
-    const links = [...rail.querySelectorAll('a')];
-    const io = new IntersectionObserver((es) => es.forEach((e) => { if (!e.isIntersecting) return; links.forEach((l) => l.setAttribute('aria-current', l.hash === '#' + e.target.id)); }), { rootMargin: '-45% 0px -50% 0px' });
-    links.forEach((l) => { const t = document.querySelector(l.hash); if (t) io.observe(t); });
-  }
 
   // Pips & Peril: two d6 and a D4 modifier; hold, then one reroll
   const roller = document.querySelector('[data-roller]');
@@ -715,45 +565,6 @@ html:not(.js) .demo__controls { display: none; }
     addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(pick); }, { passive: true });
     addEventListener('resize', pick, { passive: true });
     pick();
-  }
-
-  // Focus Home: a simulated key scan opens the full list and starts the relock countdown
-  const demo = document.querySelector('[data-demo]');
-  if (demo) {
-    const views = demo.querySelectorAll('[data-view]'), scan = demo.querySelector('[data-scan]'), lock = demo.querySelector('[data-lock]'), left = demo.querySelector('[data-relock]');
-    let t = 0, timer = 0;
-    const set = (v) => { views.forEach((x) => { x.hidden = x.dataset.view !== v; }); scan.hidden = v !== 'focus'; lock.hidden = v === 'focus'; };
-    const draw = () => { left.textContent = Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0'); };
-    scan.addEventListener('click', () => { set('all'); t = 1800; draw(); clearInterval(timer); timer = setInterval(() => { t -= 1; draw(); if (t <= 0) { clearInterval(timer); set('focus'); } }, 1000); lock.focus(); });
-    lock.addEventListener('click', () => { clearInterval(timer); set('focus'); scan.focus(); });
-  }
-
-  // live clocks and dates in the rebuilt Focus Home screens
-  const tick = () => {
-    const n = new Date();
-    document.querySelectorAll('[data-clock]').forEach((c) => { c.textContent = n.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }).replace(/\s?[AP]M$/i, ''); });
-    document.querySelectorAll('[data-date]').forEach((d) => { d.textContent = n.toLocaleDateString([], { weekday: 'long', day: 'numeric', month: 'long' }); });
-  };
-  tick(); setInterval(tick, 15000);
-
-  // the home reel slides with the scroll, never on its own
-  const reel = document.querySelector('[data-reel]');
-  if (reel && !reel.closest('html').classList.contains('no-motion') && !reduce) {
-    const track = reel.firstElementChild;
-    let raf = 0;
-    const move = () => { raf = 0; const r = reel.getBoundingClientRect(); const p = Math.min(1, Math.max(0, 1 - r.bottom / (innerHeight + r.height))); const room = Math.max(0, track.scrollWidth - reel.clientWidth); track.style.setProperty('--reel', -(room * (0.15 + p * 0.85)) + 'px'); };
-    addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(move); }, { passive: true });
-    addEventListener('resize', move, { passive: true }); move();
-  }
-
-  // the about paragraph lights up word by word as it scrolls past
-  const say = document.querySelector('[data-say]');
-  if (say && !reduce) {
-    const words = say.textContent.split(' ');
-    say.innerHTML = words.map((w) => '<span class="w">' + w + '</span>').join(' ');
-    const spans = say.querySelectorAll('.w');
-    const light = () => { const r = say.getBoundingClientRect(); const p = Math.min(1, Math.max(0, (innerHeight * 0.85 - r.top) / (r.height + innerHeight * 0.35))); spans.forEach((s, i) => s.style.setProperty('--o', i / spans.length < p ? 1 : 0.25)); };
-    addEventListener('scroll', light, { passive: true }); light();
   }
 
   // the Pips & Peril hero pan: paused off-screen, on hover, on focus, and on request
