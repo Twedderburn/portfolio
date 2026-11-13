@@ -22,7 +22,8 @@
   --es-cream: oklch(96.5% 0.006 70); --es-white: oklch(99.2% 0.003 70); --es-dark-ink: oklch(20% 0.012 45); --es-dark-ink-2: oklch(40% 0.015 45); --es-light-rule: oklch(87% 0.008 70); --es-sage-deep: oklch(47% 0.075 135); --es-glass: oklch(21% 0.012 45 / 0.82);
   --fh-paper-2: oklch(18% 0.004 150); --fh-paper-3: oklch(23% 0.004 150); --fh-ink-2: oklch(86% 0.003 150);
   --fh-black: oklch(13% 0.004 150); --fh-white: oklch(97% 0.003 150); --fh-grey: oklch(70% 0.005 150); --fh-line: oklch(30% 0.004 150);
-  --font-display: "League Spartan", ui-sans-serif, system-ui, sans-serif; --font-body: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; --font-outlier: "Pixelify Sans", ui-monospace, monospace; --font-serif: "EB Garamond", ui-serif, Georgia, serif;
+  --ll-paper: oklch(13% 0.02 285); --ll-paper-2: oklch(17% 0.026 285); --ll-paper-3: oklch(22% 0.032 285); --ll-ink: oklch(93% 0.025 85); --ll-ink-2: oklch(83% 0.03 80); --ll-muted: oklch(70% 0.035 75); --ll-rule: oklch(38% 0.05 80); --ll-amber: oklch(80% 0.13 85); --ll-amber-ink: oklch(16% 0.03 285); --ll-focus: oklch(86% 0.13 85); --ll-rubric: oklch(50% 0.19 25); --ll-rubric-ink: oklch(66% 0.17 28); --ll-cobalt: oklch(45% 0.16 265);
+  --font-display: "League Spartan", ui-sans-serif, system-ui, sans-serif; --font-body: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif; --font-outlier: "Pixelify Sans", ui-monospace, monospace; --font-serif: "EB Garamond", ui-serif, Georgia, serif; --font-blackletter: "UnifrakturMaguntia", "EB Garamond", serif; --font-inscription: "Cinzel", "EB Garamond", serif;
   --radius-card: 2px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
   --tracking-display: -0.01em;
   --nav-h: 72px;

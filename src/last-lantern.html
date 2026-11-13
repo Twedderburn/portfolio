@@ -1,0 +1,175 @@
+<!--title: Last Lantern, a game in development by Tyler Wedderburn-->
+<!--desc: Last Lantern is a dungeon crawler in development, made in Godot 4.7 by Tyler Wedderburn. Light is your health, your weapon and your map. Play the combat demo in your browser.-->
+<!--body: page-lantern-->
+<!--fonts: lantern-->
+<!--og: img/ll/ll-battle.jpg-->
+<header class="wrap">@@NAV@@</header>
+<nav class="subnav" aria-label="Last Lantern sections">
+  <div class="wrap subnav__in">
+    <a class="subnav__name" href="#ll-head">Last Lantern</a>
+    <ul class="subnav__links">
+      <li><a href="#light">The light</a></li>
+      <li><a href="#fight">How a fight works</a></li>
+      <li><a href="#commands">Commands</a></li>
+      <li><a href="#made">How it’s made</a></li>
+    </ul>
+    <a class="pill" href="#demo">Play the demo</a>
+  </div>
+</nav>
+<main id="main">
+  <section class="ll-hero" aria-labelledby="ll-head">
+    <img class="ll-hero__rose" src="img/ll/rose.svg" width="200" height="200" alt="" aria-hidden="true">
+    <div class="ll-hero__rays" aria-hidden="true"></div>
+    <div class="ll-hero__arcade" aria-hidden="true"></div>
+    <div class="wrap ll-hero__inner">
+      <div class="ll-hero__text">
+        <p class="ll-badge"><span aria-hidden="true"></span>In development</p>
+        <h1 id="ll-head">Last Lantern</h1>
+        <p class="lede">You cannot earn light. You can only spend it, share it, or receive it.</p>
+        <p class="ll-hero__sub">A dungeon crawler about a lamplighter and the light he carries, deep under a ruined temple. The light is your health, your weapon and your map.</p>
+        <div class="actions">
+          <a class="btn" href="#demo">Play the combat demo</a>
+          <a class="btn btn--quiet" href="#light">How the light works</a>
+        </div>
+      </div>
+      <figure class="ll-window">
+        <img src="img/ll/ll-sanctuary.jpg" width="1280" height="466" alt="The sanctuary in the game: a ray of light falls on a stone altar over a worn mosaic floor." fetchpriority="high">
+        <figcaption>The sanctuary, from the prototype.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="ll-notice" aria-labelledby="ll-status">
+    <div class="wrap">
+      <div class="ll-leaf">
+        <p class="ll-kicker">A work in progress</p>
+        <h2 id="ll-status">Still being built.</h2>
+        <p>Last Lantern is in development. There is no download yet. What you see here comes from the prototype as it stands today, and this page will be updated as development continues: new screenshots, new rules and a longer demo as each part is finished.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ll-tracery" aria-hidden="true"></div>
+
+  <section class="section" aria-labelledby="light">
+    <div class="wrap split">
+      <div>
+        <p class="ll-kicker">I · The light</p>
+        <h2 class="head" id="light">Light is the only thing you have.</h2>
+        <p>Disasters drove people underground. They built cities and grew forests in the dark. You play a scholar, beaten and robbed of his scrolls, who wakes in the dungeons at the very bottom.</p>
+        <dl class="rows">
+          <div><dt>Flame</dt><dd>How much light the lantern holds, and how far it reaches. It burns down as you go. Every action spends it, and you can never spend the last of it.</dd></div>
+          <div><dt>Wick</dt><dd>The lantern’s wear. Heavy blows and big spells char it, and the Flame can never be higher than the Wick.</dd></div>
+          <div><dt>Smolder</dt><dd>At 0 Flame the lamp gutters to an ember. Protect it and it relights. One more blow and it goes out.</dd></div>
+        </dl>
+      </div>
+      <figure class="ll-panel">
+        <img src="img/ll/ll-smolder.jpg" width="1280" height="720" alt="The lantern at 0 Flame. Only a small red ring of light is left around the lamplighter, and the Creepers beyond it show only their glowing eyes. The screen reads: The ember holds." loading="lazy">
+        <figcaption class="caption">At 0 Flame the light shrinks to an ember, and the Creepers are only eyes. From the prototype.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section ll-band" aria-labelledby="fight">
+    <div class="wrap split split--flip">
+      <figure class="ll-panel">
+        <img src="img/ll/ll-flare.jpg" width="1280" height="720" alt="A battle. The lamplighter aims a cone of light at a group of Creepers. A list of commands is open in the corner: Flare 12, Burst 25, Set down." loading="lazy">
+        <figcaption class="caption">Aiming a Flare. The light at the top shows the order of turns. From the prototype.</figcaption>
+      </figure>
+      <div>
+        <p class="ll-kicker">II · The battle</p>
+        <h2 class="head" id="fight">The light is the battlefield.</h2>
+        <ol class="steps">
+          <li><span><b>A fight starts where you stand</b> when a shadow sees the lamp. You don’t go to a different screen.</span></li>
+          <li><span><b>Inside the circle,</b> a shadow can be struck, and you can see its Veil and what it will do next. Outside it, you see only eyes.</span></li>
+          <li><span><b>Lamp light strips the Veil.</b> A bared shadow loses its next turn and can be cut by the blade.</span></li>
+          <li><span><b>Every spend draws the circle in.</b> Each Flare or strike makes the lit area smaller.</span></li>
+          <li><span><b>Each round burns 1 Flame.</b> You go first, then each shadow, nearest first.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <div class="ll-tracery" aria-hidden="true"></div>
+
+  <section class="section" id="demo" aria-labelledby="try">
+    <div class="wrap">
+      <p class="ll-kicker">III · The demo</p>
+      <h2 class="head" id="try">Try a fight.</h2>
+      <p>Five Creepers and a full lantern. Use the same commands and costs as the game, and see how much light you have left at the end.</p>
+      <div class="ll-battle" data-battle data-assets="img/ll/" tabindex="-1" aria-label="Last Lantern combat demo">
+        <div class="ll-battle__crown" aria-hidden="true"></div>
+        <div class="ll-stage">
+          <canvas width="960" height="540" role="img" aria-label="The battle: the lamplighter on the left, five Creepers on the right, the circle of lamp light around him. The status line below reads each event aloud."></canvas>
+          <button type="button" class="btn ll-start" data-start disabled>Start the fight</button>
+          <div class="ll-menu" data-menu>
+            <p class="ll-menu__hint" data-hint></p>
+            <p class="ll-menu__tab" data-menu-title>Act</p>
+            <div class="ll-menu__list" data-menu-list></div>
+          </div>
+          <div class="ll-summary" data-summary role="dialog" aria-labelledby="ll-sum-title" hidden>
+            <h3 id="ll-sum-title" data-sum-title>The circle holds.</h3>
+            <dl data-sum-rows></dl>
+            <p class="ll-summary__note">XP is global in the game: it stays with you from run to run. This demo stores it in your browser.</p>
+            <button type="button" class="btn">Fight again</button>
+          </div>
+        </div>
+        <p class="visually-hidden" aria-live="polite" data-status></p>
+        <div class="ll-help">
+          <p class="ll-keys"><span><kbd>←</kbd> <kbd>→</kbd> or click a shadow: aim</span><span><kbd>↑</kbd> <kbd>↓</kbd>: choose</span><span><kbd>Enter</kbd> or <kbd>E</kbd>: act</span><span><kbd>Esc</kbd>: back</span><span><kbd>R</kbd>: restart</span></p>
+          <p class="ll-keys"><span>Shortcuts, press twice to act: <kbd>J</kbd> Attack, <kbd>K</kbd> Flare, <kbd>Q</kbd> Burst, <kbd>Space</kbd> Lantern, <kbd>Shift</kbd> Defend</span></p>
+          <button type="button" class="btn btn--quiet ll-restart" data-restart>Restart the fight</button>
+        </div>
+        <noscript><p>The demo needs JavaScript.</p></noscript>
+      </div>
+      <p class="caption">This is a browser version of the prototype’s battle. The rules and costs are the same as in the Godot build, and the sprites and pixel font are from the game. The 3D temple and real lighting are only in the game.</p>
+    </div>
+  </section>
+
+  <section class="section ll-band" aria-labelledby="commands">
+    <div class="wrap">
+      <p class="ll-kicker">IV · The commands</p>
+      <h2 class="head" id="commands">Every command costs light.</h2>
+      <p>The menu has Attack, Flame, Defend and Items. Flame opens the lantern skills. Items will hold the things you carry, and they are still being designed.</p>
+      <table class="table">
+        <thead><tr><th scope="col">Command</th><th scope="col">Flame</th><th scope="col">What it does</th></tr></thead>
+        <tbody>
+          <tr><td>Attack (lamp)</td><td class="num">3</td><td>Strips 1 Veil from a lit shadow. A bared shadow takes 1 damage.</td></tr>
+          <tr><td>Attack (blade)</td><td class="num">0</td><td>With the lantern set down: 2 damage to a bared shadow. A kill gives you one more action.</td></tr>
+          <tr><td>Flare</td><td class="num">12</td><td>Bares every shadow in a cone, lit or not.</td></tr>
+          <tr><td>Burst</td><td class="num">25</td><td>Bares every shadow around you. Also chars 5 Wick.</td></tr>
+          <tr><td>Set down or lift</td><td class="num">0</td><td>Once a turn, and it doesn’t use your turn. Blows cost half again as much Flame while the lantern is down.</td></tr>
+          <tr><td>Defend</td><td class="num">0</td><td>Until your next turn, blows cost half the Flame and no Wick. With the lantern set down, it becomes Wait and only passes the turn.</td></tr>
+        </tbody>
+      </table>
+      <p class="caption">A Creeper’s blow costs 10 Flame and 2 Wick. The pack lands at most two blows a round. All numbers are from the prototype and will change with playtesting.</p>
+    </div>
+  </section>
+
+  <div class="ll-tracery" aria-hidden="true"></div>
+
+  <section class="section" aria-labelledby="made">
+    <div class="wrap split">
+      <div>
+        <p class="ll-kicker">V · The making</p>
+        <h2 class="head" id="made">Made in Godot, lit for real.</h2>
+        <ul class="ll-facts">
+          <li><b>Godot 4.7 and GDScript.</b> I’m making it on my own, in my spare time.</li>
+          <li><b>HD-2D.</b> Pixel-art figures stand in a 3D temple. The camera looks down at an angle with a long lens.</li>
+          <li><b>Real light.</b> The lamp is a point light, and walls block it, so rooms you can’t see into stay black.</li>
+          <li><b>Sprites made with code.</b> A Python pipeline builds every frame of the cast into one sprite sheet, with a separate sheet for the parts that glow, like eyes and flames.</li>
+          <li><b>Progress that carries over.</b> Each fight ends with a summary of the Flame and Wick you spent and the XP you earned. XP will go into a skill tree that carries over between runs.</li>
+        </ul>
+      </div>
+      <figure class="ll-panel">
+        <img src="img/ll/ll-battle.jpg" width="1280" height="720" alt="The battle screen. The lantern’s circle of light surrounds the lamplighter, and Creepers wait at its edge with blue Veil pips above them." loading="lazy">
+        <figcaption class="caption">The battle screen in the Godot build. The dashed ring is the edge of the light.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="ll-tracery" aria-hidden="true"></div>
+
+  <nav class="wrap next" aria-label="Next project"><a href="pips-and-peril.html"><span>Next project</span><b>Pips &amp; Peril</b></a></nav>
+</main>
+<script src="js/last-lantern-battle.js" defer></script>

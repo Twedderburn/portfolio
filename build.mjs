@@ -18,6 +18,7 @@ const pages = [
   { file: 'index.html', label: 'Home' },
   { file: 'pips-and-peril.html', label: 'Pips & Peril' },
   { file: 'focus-home.html', label: 'Focus Home' },
+  { file: 'last-lantern.html', label: 'Last Lantern' },
 ];
 const homeHref = artifact ? './' : 'index.html';
 const href = (f) => (f === 'index.html' ? homeHref : f);
@@ -38,7 +39,7 @@ const footer = `<footer class="footer">
       <ul>${pages.map((p) => `<li><a href="${href(p.file)}">${p.label.replace('&', '&amp;')}</a></li>`).join('')}</ul>
       <ul><li><a href="mailto:T1D0@pm.me">T1D0@pm.me</a></li><li><a href="https://github.com/Twedderburn">GitHub</a></li></ul>
     </div>
-    <p class="footer__note">Pips &amp; Peril screenshots and art come from the game itself. Focus Home screenshots were captured from the 1.7 dev build; every screen shown is also in the public 1.6 release.</p>
+    <p class="footer__note">Pips &amp; Peril screenshots and art come from the game itself. Focus Home screenshots were captured from the 1.7 dev build; every screen shown is also in the public 1.6 release. Last Lantern is in development; its screenshots and demo come from the current prototype.</p>
   </div>
 </footer>`;
 
@@ -46,6 +47,7 @@ const fontSets = {
   home: 'family=League+Spartan:wght@800&family=Hanken+Grotesk:wght@400;600&family=Pixelify+Sans:wght@600',
   pips: 'family=League+Spartan:wght@800&family=Hanken+Grotesk:wght@400;600&family=Pixelify+Sans:wght@600',
   focus: 'family=League+Spartan:wght@800&family=Hanken+Grotesk:wght@400;600',
+  lantern: 'family=League+Spartan:wght@800&family=Hanken+Grotesk:wght@400;600&family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Cinzel:wght@600&family=UnifrakturMaguntia',
 };
 
 const scripts = `<script>
