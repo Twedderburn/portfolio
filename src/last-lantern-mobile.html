@@ -1,0 +1,109 @@
+<!--title: Last Lantern, a game in development by Tyler Wedderburn-->
+<!--desc: Last Lantern is a dungeon crawler in development, made in Godot 4.7 by Tyler Wedderburn. Play the combat demo on your phone.-->
+<!--body: page-lantern page-lantern-mobile-->
+<!--fonts: lantern-->
+<!--og: img/ll/ll-battle.jpg-->
+<!--canonical: last-lantern.html-->
+<header class="wrap">@@NAV@@</header>
+<main id="main">
+  <section class="llm-hero" aria-labelledby="ll-head">
+    <img class="llm-hero__rose" src="img/ll/rose.svg" width="200" height="200" alt="" aria-hidden="true">
+    <div class="wrap llm-hero__in">
+      <p class="ll-badge"><span aria-hidden="true"></span>In development</p>
+      <h1 id="ll-head">Last Lantern</h1>
+      <p class="lede">You cannot earn light. You can only spend it, share it, or receive it.</p>
+      <p class="llm-hero__sub">A dungeon crawler about a lamplighter and the light he carries. The light is your health, your weapon and your map.</p>
+      <a class="btn" href="#demo">Play the combat demo</a>
+    </div>
+  </section>
+
+  <section class="ll-notice" aria-labelledby="ll-status">
+    <div class="wrap">
+      <div class="ll-leaf">
+        <p class="ll-kicker">A work in progress</p>
+        <h2 id="ll-status">Still being built.</h2>
+        <p>Last Lantern is in development, and there is no download yet. This page will be updated as development continues.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="llm-demo" id="demo" aria-labelledby="try">
+    <div class="wrap">
+      <p class="ll-kicker">The demo</p>
+      <h2 class="head" id="try">Try a fight.</h2>
+      <p class="llm-lead">Five Creepers and a full lantern. Tap a shadow (or the arrows) to aim, then tap a command.</p>
+    </div>
+    <div class="llm-battle" data-battle data-layout="portrait" data-assets="img/ll/" tabindex="-1" aria-label="Last Lantern combat demo">
+      <div class="llm-hud" aria-hidden="true">
+        <div class="llm-meters">
+          <div class="llm-meter">
+            <span>Flame</span><b data-hud-flame>100</b><small class="llm-note" data-hud-note></small>
+            <i class="llm-bar"><em class="llm-bar__wick" data-hud-wick-bar></em><em class="llm-bar__flame" data-hud-flame-bar></em><em class="llm-bar__cost" data-hud-cost-bar></em></i>
+          </div>
+          <div class="llm-meter llm-meter--wick"><span>Wick</span><b data-hud-wick>100</b></div>
+        </div>
+        <div class="llm-order"><span>Round <b data-hud-round>1</b></span><ol data-hud-order></ol></div>
+      </div>
+      <div class="ll-stage llm-stage">
+        <canvas width="540" height="540" role="img" aria-label="The battle: the lamplighter at the bottom, five Creepers above him, and the circle of lamp light around him. The status line reads each event aloud."></canvas>
+        <p class="llm-msg" data-hud-msg aria-hidden="true"></p>
+        <button type="button" class="llm-aim llm-aim--prev" data-aim-prev aria-label="Aim at the shadow before">‹</button>
+        <button type="button" class="llm-aim llm-aim--next" data-aim-next aria-label="Aim at the next shadow">›</button>
+        <button type="button" class="btn ll-start" data-start disabled>Start the fight</button>
+        <div class="ll-summary" data-summary role="dialog" aria-labelledby="ll-sum-title" hidden>
+          <h3 id="ll-sum-title" data-sum-title>The circle holds.</h3>
+          <dl data-sum-rows></dl>
+          <p class="ll-summary__note">XP stays with you from run to run in the game. This demo keeps it in your browser.</p>
+          <button type="button" class="btn">Fight again</button>
+        </div>
+      </div>
+      <div class="llm-controls">
+        <div class="ll-menu" data-menu>
+          <p class="ll-menu__hint" data-hint></p>
+          <p class="ll-menu__tab" data-menu-title>Act</p>
+          <div class="ll-menu__list" data-menu-list></div>
+        </div>
+        <button type="button" class="btn btn--quiet ll-restart" data-restart>Restart the fight</button>
+      </div>
+      <p class="visually-hidden" aria-live="polite" data-status></p>
+      <noscript><p class="wrap">The demo needs JavaScript.</p></noscript>
+    </div>
+  </section>
+
+  <div class="ll-tracery" aria-hidden="true"></div>
+
+  <section class="section llm-rules" aria-labelledby="rules">
+    <div class="wrap">
+      <p class="ll-kicker">How a fight works</p>
+      <h2 class="head" id="rules">The light is the battlefield.</h2>
+      <ol class="steps">
+        <li><span><b>Inside the circle,</b> you can strike a shadow and see what it will do. Outside it, you see only eyes.</span></li>
+        <li><span><b>Lamp light strips the Veil</b> (the blue squares). A bared shadow loses its next turn.</span></li>
+        <li><span><b>Set the lantern down</b> and the blade cuts a bared shadow for 2. A kill gives you another action.</span></li>
+        <li><span><b>Every spend draws the circle in,</b> and each round burns 1 Flame.</span></li>
+        <li><span><b>At 0 Flame</b> the lamp smolders. Defend the ember and it relights.</span></li>
+      </ol>
+      <dl class="llm-costs">
+        <div><dt>Attack</dt><dd>3 Flame, or free with the blade</dd></div>
+        <div><dt>Flare</dt><dd>12 Flame. Bares every shadow in a cone.</dd></div>
+        <div><dt>Burst</dt><dd>25 Flame and 5 Wick. Bares every shadow.</dd></div>
+        <div><dt>Defend</dt><dd>Blows cost half and no Wick. With the lantern down, it becomes Wait.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section llm-more" aria-labelledby="more">
+    <div class="wrap">
+      <figure class="ll-panel">
+        <img src="img/ll/ll-flare.jpg" width="1280" height="720" alt="A battle in the game. The lamplighter aims a cone of light at a group of Creepers." loading="lazy">
+        <figcaption class="caption">A battle in the Godot prototype.</figcaption>
+      </figure>
+      <h2 class="visually-hidden" id="more">More about the game</h2>
+      <p class="llm-full">The full page has more about the game, the lore and how it’s made. <a href="last-lantern.html?full=1">Open the full page</a></p>
+    </div>
+  </section>
+
+  <div class="ll-tracery" aria-hidden="true"></div>
+  <nav class="wrap next" aria-label="Next project"><a href="pips-and-peril.html"><span>Next project</span><b>Pips &amp; Peril</b></a></nav>
+</main>
+<script src="js/last-lantern-battle.js" defer></script>

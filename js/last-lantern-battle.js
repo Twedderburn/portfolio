@@ -8,9 +8,17 @@
   if (!root) return;
   const cv = root.querySelector('canvas');
   const ctx = cv.getContext('2d');
-  const W = 960, H = 540;
+  // Two layouts: the wide one for desktops, and a tall one for phones, with bigger figures and the HUD in HTML.
+  const PORTRAIT = root.dataset.layout === 'portrait';
+  const L = PORTRAIT
+    ? { W: 540, H: 540, OX: 270, OY: 455, K: 1.05, SQ: 0.78, SPR: 1.55, WALL: 150, TS: 3, PIP: 12, HEAD: 99,
+        PACK: [[-128, 245], [-110, 165], [-90, 235], [-70, 150], [-52, 245]] }
+    : { W: 960, H: 540, OX: 385, OY: 285, K: 0.9, SQ: 0.78, SPR: 1.35, WALL: 124, TS: 2, PIP: 8, HEAD: 84,
+        PACK: [[-35, 250], [-17, 165], [5, 238], [27, 140], [47, 255]] };
+  const W = L.W, H = L.H;
+  cv.width = W; cv.height = H;
   // world (game pixels, 48 to a tile) to canvas: the camera looks down at a slant
-  const OX = 385, OY = 285, K = 0.9, SQ = 0.78, SPR = 1.35;
+  const OX = L.OX, OY = L.OY, K = L.K, SQ = L.SQ, SPR = L.SPR;
   const sx = (x) => OX + x * K;
   const sy = (y) => OY + y * K * SQ;
 
@@ -42,7 +50,7 @@
   const TITLE = { root: 'Act', flame: 'Flame', items: 'Items' };
   const KEYS = { strike: 'J', flare: 'K', burst: 'Q', lantern: 'Space', shield: 'Shift' };
   // where the shadows draw up round the lamp: [angle in degrees, distance]
-  const PACK = [[-35, 250], [-17, 165], [5, 238], [27, 140], [47, 255]];
+  const PACK = L.PACK;
 
   // ---- the 5x7 HUD font (scripts/pixelfont.gd) ----
   const GLYPHS = {"A":".###./#...#/#...#/#####/#...#/#...#/#...#","B":"####./#...#/#...#/####./#...#/#...#/####.","C":".###./#...#/#..../#..../#..../#...#/.###.","D":"####./#...#/#...#/#...#/#...#/#...#/####.","E":"#####/#..../#..../####./#..../#..../#####","F":"#####/#..../#..../####./#..../#..../#....","G":".###./#...#/#..../#.###/#...#/#...#/.###.","H":"#...#/#...#/#...#/#####/#...#/#...#/#...#","I":".###./..#../..#../..#../..#../..#../.###.","J":"..###/...#./...#./...#./...#./#..#./.##..","K":"#...#/#..#./#.#../##.../#.#../#..#./#...#","L":"#..../#..../#..../#..../#..../#..../#####","M":"#...#/##.##/#.#.#/#.#.#/#...#/#...#/#...#","N":"#...#/##..#/#.#.#/#..##/#...#/#...#/#...#","O":".###./#...#/#...#/#...#/#...#/#...#/.###.","P":"####./#...#/#...#/####./#..../#..../#....","Q":".###./#...#/#...#/#...#/#.#.#/#..#./.##.#","R":"####./#...#/#...#/####./#.#../#..#./#...#","S":".####/#..../#..../.###./....#/....#/####.","T":"#####/..#../..#../..#../..#../..#../..#..","U":"#...#/#...#/#...#/#...#/#...#/#...#/.###.","V":"#...#/#...#/#...#/#...#/#...#/.#.#./..#..","W":"#...#/#...#/#...#/#.#.#/#.#.#/##.##/#...#","X":"#...#/#...#/.#.#./..#../.#.#./#...#/#...#","Y":"#...#/#...#/.#.#./..#../..#../..#../..#..","Z":"#####/....#/...#./..#../.#.../#..../#####","0":".###./#...#/#..##/#.#.#/##..#/#...#/.###.","1":"..#../.##../..#../..#../..#../..#../.###.","2":".###./#...#/....#/...#./..#../.#.../#####","3":"####./....#/....#/.###./....#/....#/####.","4":"...#./..##./.#.#./#..#./#####/...#./...#.","5":"#####/#..../####./....#/....#/#...#/.###.","6":".###./#..../#..../####./#...#/#...#/.###.","7":"#####/....#/...#./..#../.#.../.#.../.#...","8":".###./#...#/#...#/.###./#...#/#...#/.###.","9":".###./#...#/#...#/.####/....#/....#/.###.",".":"...../...../...../...../...../.##../.##..",",":"...../...../...../...../.##../..#../.#...",":":"...../.##../.##../...../.##../.##../.....",";":"...../.##../.##../...../.##../..#../.#...","/":"....#/...#./...#./..#../.#.../.#.../#....","(":"...#./..#../.#.../.#.../.#.../..#../...#.",")":".#.../..#../...#./...#./...#./..#../.#...","%":"##..#/##..#/...#./..#../.#.../#..##/#..##","'":"..#../..#../.#.../...../...../...../.....","-":"...../...../...../.###./...../...../.....","!":"..#../..#../..#../..#../..#../...../..#..","?":".###./#...#/....#/...#./..#../...../..#..","+":"...../..#../..#../#####/..#../..#../.....","=":"...../...../#####/...../#####/...../.....",">":"#..../.#.../..#../...#./..#../.#.../#....","<":"....#/...#./..#../.#.../..#../...#./....#"};
@@ -93,7 +101,7 @@
   // ---- the floor: cracked, mossy flagstones, drawn once ----
   const floor = document.createElement('canvas');
   floor.width = W; floor.height = H;
-  const WALL = 124;   // the back wall of the chapel, at the top of the picture
+  const WALL = L.WALL;   // the back wall of the chapel, at the top of the picture
   const glass = document.createElement('canvas');
   glass.width = W; glass.height = WALL;
   (function buildFloor() {
@@ -144,15 +152,15 @@
       g.fillStyle = '#2a2433'; g.fillRect(cx + 50, 0, 16, WALL);
       g.fillStyle = '#3a3146'; g.fillRect(cx + 50, 0, 3, WALL);
       // the window's deep reveal, then its glass, cut into panes with lead
-      g.fillStyle = '#07060a'; lancet(g, cx, 34, 112, 19); g.fill();
-      gg.save(); lancet(gg, cx, 37, 110, 16); gg.clip();
-      for (let y = 30; y < 112; y += 9) for (let x = cx - 18; x < cx + 18; x += 9) { gg.fillStyle = panes[Math.floor(rnd() * panes.length)]; gg.fillRect(x, y, 9, 9); }
+      g.fillStyle = '#07060a'; lancet(g, cx, WALL - 90, WALL - 12, 19); g.fill();
+      gg.save(); lancet(gg, cx, WALL - 87, WALL - 14, 16); gg.clip();
+      for (let y = WALL - 94; y < WALL - 12; y += 9) for (let x = cx - 18; x < cx + 18; x += 9) { gg.fillStyle = panes[Math.floor(rnd() * panes.length)]; gg.fillRect(x, y, 9, 9); }
       gg.strokeStyle = '#08070a'; gg.lineWidth = 1.2;
-      for (let y = 30; y < 112; y += 9) { gg.beginPath(); gg.moveTo(cx - 18, y); gg.lineTo(cx + 18, y + 2); gg.stroke(); }
-      gg.lineWidth = 3; gg.beginPath(); gg.moveTo(cx, 60); gg.lineTo(cx, 112); gg.stroke(); // the mullion
-      gg.beginPath(); gg.arc(cx, 52, 6, 0, Math.PI * 2); gg.stroke();                // the oculus
+      for (let y = WALL - 94; y < WALL - 12; y += 9) { gg.beginPath(); gg.moveTo(cx - 18, y); gg.lineTo(cx + 18, y + 2); gg.stroke(); }
+      gg.lineWidth = 3; gg.beginPath(); gg.moveTo(cx, WALL - 64); gg.lineTo(cx, WALL - 12); gg.stroke(); // the mullion
+      gg.beginPath(); gg.arc(cx, WALL - 72, 6, 0, Math.PI * 2); gg.stroke();                // the oculus
       gg.restore();
-      g.fillStyle = '#2a2433'; g.fillRect(cx - 21, 110, 42, 5); // the sill
+      g.fillStyle = '#2a2433'; g.fillRect(cx - 21, WALL - 14, 42, 5); // the sill
     }
     g.fillStyle = '#2a2433'; g.fillRect(0, WALL - 6, W, 6);
     g.fillStyle = '#060508'; g.fillRect(0, WALL, W, 3);
@@ -678,9 +686,9 @@
     if (!S || !S.active) return;
     const r = cv.getBoundingClientRect();
     const mx = (ev.clientX - r.left) * W / r.width, my = (ev.clientY - r.top) * H / r.height;
-    let best = null, bd = 60;
+    let best = null, bd = 60 * SPR / 1.35;
     for (const f of living()) {
-      const d = Math.hypot(sx(f.x) - mx, sy(f.y) - 30 - my);
+      const d = Math.hypot(sx(f.x) - mx, sy(f.y) - 30 * SPR / 1.35 - my);
       if (d < bd) { bd = d; best = f; }
     }
     if (best) { S.target = best; update(); }
@@ -691,6 +699,7 @@
     root.classList.add('is-playing');
     run();
     renderMenu(false);
+    if (PORTRAIT) root.scrollIntoView({ block: 'start', behavior: 'smooth' });
     root.focus({ preventScroll: true });
   }
   function restart() {
@@ -858,7 +867,7 @@
       } else if (fx.kind === 'flash') {
         ctx.fillStyle = `rgba(160,20,10,${0.28 * (1 - k)})`; ctx.fillRect(0, 0, W, H);
       } else if (fx.kind === 'text') {
-        text(fx.t, sx(fx.x), sy(fx.y) - 110 - k * 26, fx.color, 2, 'center');
+        text(fx.t, sx(fx.x), sy(fx.y) - L.HEAD - 26 - k * 26, fx.color, L.TS, 'center');
       }
     }
     S.fx = S.fx.filter((fx) => t - fx.t0 < fx.ms);
@@ -866,31 +875,32 @@
 
     // over each shadow: in the light, its Veil and intent; in the dark, only a question
     for (const f of living()) {
-      const X = sx(f.x), Y = sy(f.y) - 84;
-      if (!lit(f)) { text('?', X, Y + 4, C.eye, 2, 'center'); continue; }
+      const X = sx(f.x), Y = sy(f.y) - L.HEAD, P = L.PIP, G = P + 4;
+      if (!lit(f)) { text('?', X, Y + 4, C.eye, L.TS, 'center'); continue; }
       const pips = f.bared ? f.hp : T.VEIL;
-      const w = pips * 12 - 4;
+      const w = pips * G - 4;
       for (let i = 0; i < pips; i++) {
-        const px = X - w / 2 - 10 + i * 12;
-        ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(px - 1, Y - 1, 10, 10);
-        if (f.bared) { ctx.fillStyle = C.danger; ctx.fillRect(px, Y, 8, 8); }
-        else if (i < f.veil) { ctx.fillStyle = C.veil; ctx.fillRect(px, Y, 8, 8); }
-        else { ctx.strokeStyle = C.veil; ctx.lineWidth = 1; ctx.strokeRect(px + 0.5, Y + 0.5, 7, 7); }
+        const px = X - w / 2 - 10 + i * G;
+        ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(px - 1, Y - 1, P + 2, P + 2);
+        if (f.bared) { ctx.fillStyle = C.danger; ctx.fillRect(px, Y, P, P); }
+        else if (i < f.veil) { ctx.fillStyle = C.veil; ctx.fillRect(px, Y, P, P); }
+        else { ctx.strokeStyle = C.veil; ctx.lineWidth = 1; ctx.strokeRect(px + 0.5, Y + 0.5, P - 1, P - 1); }
       }
       const it = intent(f);
-      text(it === 'creep' ? '>>' : it === 'lunge' ? '!' : 'X', X + w / 2 - 4, Y - 2, it === 'lunge' ? C.danger : it === 'bared' ? C.dim : C.pale, 2, 'left');
+      text(it === 'creep' ? '>>' : it === 'lunge' ? '!' : 'X', X + w / 2 - 4, Y - 2, it === 'lunge' ? C.danger : it === 'bared' ? C.dim : C.pale, L.TS, 'left');
     }
     // the target
     if (S.active && alive(S.target)) {
-      const X = sx(S.target.x), Y = sy(S.target.y) - 100 + Math.sin(t / 160) * 3;
+      const X = sx(S.target.x), Y = sy(S.target.y) - L.HEAD - 16 + Math.sin(t / 160) * 3, A = L.TS * 3.5;
       ctx.fillStyle = C.warm;
-      ctx.beginPath(); ctx.moveTo(X - 7, Y); ctx.lineTo(X + 7, Y); ctx.lineTo(X, Y + 9); ctx.closePath(); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(X - A, Y - A); ctx.lineTo(X + A, Y - A); ctx.lineTo(X, Y + A * 0.3); ctx.closePath(); ctx.fill();
     }
 
     drawHud(t);
   }
 
   function drawHud(t) {
+    if (PORTRAIT) { htmlHud(); return; }
     // the lamp: Flame and Wick
     ctx.fillStyle = 'rgba(8,6,5,0.72)';
     ctx.fillRect(12, 10, 270, 74);
@@ -932,6 +942,46 @@
 
     if (S.msg && now() < S.msgUntil) text(S.msg, 640, 498, C.pale, 2, 'center');
   }
+
+  // ---- the phone's HUD, in HTML so it stays big and sharp ----
+  const hud = {
+    flame: el('[data-hud-flame]'), wick: el('[data-hud-wick]'), flameBar: el('[data-hud-flame-bar]'),
+    costBar: el('[data-hud-cost-bar]'), wickBar: el('[data-hud-wick-bar]'), note: el('[data-hud-note]'),
+    round: el('[data-hud-round]'), order: el('[data-hud-order]'), msg: el('[data-hud-msg]'),
+  };
+  let hudKey = '';
+  function htmlHud() {
+    if (!hud.flame) return;
+    const c = S.phase === 'choose' ? cost(S.cmd) : 0;
+    const order = S.order.length ? S.order : [null, ...living()];
+    const chips = order.map((who, i) => {
+      const now_ = i === S.turn && S.active;
+      if (who === null) return ['you', now_, 'You'];
+      if (!alive(who)) return ['gone', now_, '–'];
+      return [lit(who) ? (who.bared ? 'bared' : 'lit') : 'dark', now_, lit(who) ? String(who.id) : '?'];
+    });
+    const note = c > 0 ? '−' + c + (S.cmd === 'burst' ? ', wick −' + T.BURST_WICK : '')
+      : S.smoldering ? 'ember, relights in ' + (S.smolderTurns + 1) : S.shielded ? 'shielded' : '';
+    const msg = S.msg && now() < S.msgUntil ? S.msg : '';
+    const key = [Math.round(S.flame), Math.round(S.wick), c, S.smoldering, note, S.round, JSON.stringify(chips), msg].join('|');
+    if (key === hudKey) return;
+    hudKey = key;
+    hud.flame.textContent = Math.round(S.flame);
+    hud.wick.textContent = Math.round(S.wick);
+    hud.flameBar.style.width = S.flame + '%';
+    hud.wickBar.style.width = S.wick + '%';
+    hud.costBar.style.left = Math.max(0, S.flame - c) + '%';
+    hud.costBar.style.width = Math.min(c, S.flame) + '%';
+    root.classList.toggle('is-smoldering', S.smoldering);
+    hud.note.textContent = note;
+    hud.round.textContent = S.round;
+    hud.order.innerHTML = chips.map(([k, on, label]) => `<li class="is-${k}${on ? ' is-now' : ''}">${label}</li>`).join('');
+    hud.msg.textContent = msg;
+  }
+
+  // the phone's aim buttons
+  el('[data-aim-prev]')?.addEventListener('click', () => { if (S && S.active) cycle(-1); });
+  el('[data-aim-next]')?.addEventListener('click', () => { if (S && S.active) cycle(1); });
 
   // ---- load ----
   const load = (img, src) => new Promise((ok, no) => { img.onload = ok; img.onerror = no; img.src = src; });

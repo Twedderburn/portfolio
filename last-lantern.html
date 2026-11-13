@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){try{if(/[?&]full=1/.test(location.search)){sessionStorage.setItem('full-site','1');return}if(sessionStorage.getItem('full-site'))return}catch(e){}var u=navigator.userAgent,d=navigator.userAgentData;var phone=(d&&d.mobile)||/Android.+Mobile|iPhone|iPod|Windows Phone|Mobi/i.test(u)||(matchMedia('(pointer: coarse)').matches&&Math.min(screen.width,screen.height)<600);if(phone)location.replace('last-lantern-mobile.html'+location.hash)})();</script>
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://twedderburn.github.io/portfolio/last-lantern-mobile.html">
 <title>Last Lantern, a game in development by Tyler Wedderburn</title>
 <meta name="description" content="Last Lantern is a dungeon crawler in development, made in Godot 4.7 by Tyler Wedderburn. Light is your health, your weapon and your map. Play the combat demo in your browser.">
 <meta property="og:type" content="website">
@@ -500,6 +502,93 @@ html:not(.js) .ll-stage, html:not(.js) .ll-help { display: none; }
   .ll-leaf h2 + p::first-letter { font-size: 2.8em; }
   .ll-panel { padding: 6px; padding-top: 40px; }
 }
+
+/* ---------- Last Lantern, the phone page: one column, a tall demo, big controls ---------- */
+.page-lantern-mobile { --gutter: 16px; }
+.page-lantern-mobile main { font-size: 1.0625rem; }
+.page-lantern-mobile .nav__mail { display: none; }
+.llm-hero { position: relative; overflow: hidden; background: radial-gradient(ellipse 90% 70% at 80% 10%, oklch(22% 0.05 285) 0%, var(--color-paper) 72%); }
+.llm-hero__rose { position: absolute; top: -110px; right: -140px; width: 340px; aspect-ratio: 1; opacity: 0.3; pointer-events: none; }
+.llm-hero__in { position: relative; display: grid; gap: var(--space-md); justify-items: start; padding-block: var(--space-xl) var(--space-xl); }
+.llm-hero h1 { font: 400 clamp(3rem, 16vw, 5rem)/0.95 var(--font-blackletter); color: var(--color-ink); text-shadow: 0 2px 0 #000; }
+.llm-hero h1::first-letter { color: var(--ll-rubric); }
+.llm-hero .lede { font: italic 500 var(--text-lg)/1.35 var(--font-serif); }
+.llm-hero__sub { color: var(--color-ink-2); line-height: 1.5; }
+.llm-hero .btn { min-height: 52px; background: var(--color-accent); color: var(--color-accent-ink); border-color: var(--color-accent); }
+.page-lantern-mobile .ll-notice { padding-block: var(--space-md) var(--space-lg); }
+.page-lantern-mobile .ll-leaf { padding: var(--space-lg) var(--space-md); box-shadow: 0 0 0 4px var(--color-paper), 0 0 0 5px oklch(62% 0.1 80 / 0.6), 0 12px 30px #000; }
+.page-lantern-mobile .ll-leaf h2 { font-size: var(--text-xl); }
+.page-lantern-mobile .ll-leaf p { font-size: var(--text-md); }
+.page-lantern-mobile .ll-leaf h2 + p::first-letter { font-size: 2.6em; }
+
+.llm-demo { padding-block: var(--space-xl) var(--space-lg); }
+.llm-demo .head { font-size: var(--text-2xl); }
+.llm-lead { margin-top: var(--space-xs); color: var(--color-ink-2); line-height: 1.45; }
+.llm-battle { max-width: 560px; margin: var(--space-md) auto 0; padding-inline: 8px; outline: none;; scroll-margin-top: calc(6px - var(--space-3xl)); } /* the site leaves room for a sticky bar; this page has none */
+
+/* the HUD, in HTML: big numbers and a turn order you can read */
+.llm-hud { display: grid; gap: 8px; padding: 8px 10px; background: linear-gradient(180deg, #1b1722, #131017); border: 1px solid oklch(62% 0.1 80 / 0.7); border-bottom: 0; }
+.llm-meters { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-md); align-items: center; }
+.llm-meter { display: grid; grid-template-columns: auto auto auto minmax(0, 1fr); align-items: center; gap: 6px; }
+.llm-note { font: italic var(--text-sm)/1 var(--font-serif); color: var(--color-ink-2); white-space: nowrap; }
+.is-smoldering .llm-note { color: var(--ll-rubric-ink); }
+.llm-meter span { font: 600 var(--text-xs)/1 var(--font-inscription); letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-muted); }
+.llm-meter b { min-width: 2.2ch; font: 600 var(--text-xl)/1 var(--font-inscription); font-variant-numeric: tabular-nums; color: var(--color-accent); }
+.llm-meter--wick { grid-template-columns: auto auto; }
+.llm-meter--wick b { color: oklch(75% 0.07 50); }
+.llm-bar { position: relative; display: block; height: 10px; background: #2a211c; border: 1px solid #000; }
+.llm-bar em { position: absolute; top: 0; bottom: 0; left: 0; transition: width var(--dur-short) var(--ease-out), left var(--dur-short) var(--ease-out); }
+.llm-bar__wick { background: #5b3d2a; }
+.llm-bar__flame { background: linear-gradient(90deg, oklch(65% 0.17 45), var(--color-accent)); box-shadow: 0 0 8px oklch(80% 0.13 85 / 0.5); }
+.llm-bar__cost { background: rgba(255, 255, 255, 0.45); width: 0; }
+.is-smoldering .llm-bar__flame { background: var(--ll-rubric-ink); }
+.is-smoldering .llm-meter b { color: var(--ll-rubric-ink); }
+.llm-order { display: flex; align-items: center; gap: 10px; }
+.llm-order > span { flex: none; font: 600 var(--text-xs)/1 var(--font-inscription); letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-muted); }
+.llm-order > span b { color: var(--color-ink); }
+.llm-order ol { display: flex; flex-wrap: wrap; gap: 5px; margin: 0; padding: 0; list-style: none; }
+.llm-order li { display: grid; place-items: center; min-width: 30px; height: 30px; padding: 0 6px; border: 1px solid #5a5262; border-radius: 15px; background: #16121b; font: 600 var(--text-xs)/1 var(--font-inscription); color: oklch(78% 0.08 260); }
+.llm-order li.is-you { color: var(--color-accent); border-color: oklch(62% 0.1 80 / 0.7); }
+.llm-order li.is-bared { color: var(--ll-rubric-ink); }
+.llm-order li.is-dark { color: oklch(70% 0.06 260); opacity: 0.8; }
+.llm-order li.is-gone { opacity: 0.3; }
+.llm-order li.is-now { border-color: var(--color-accent); box-shadow: 0 0 0 2px oklch(80% 0.13 85 / 0.35), 0 0 10px oklch(80% 0.13 85 / 0.4); }
+
+.llm-stage { border-top: 0; box-shadow: none; }
+.page-lantern-mobile .llm-stage { overflow: hidden; border: 1px solid oklch(62% 0.1 80 / 0.7); }
+.page-lantern-mobile .llm-stage canvas { aspect-ratio: 1; cursor: pointer; border: 0; }
+.llm-msg { position: absolute; left: 60px; right: 60px; bottom: 14px; z-index: 2; min-height: 1.4em; text-align: center; font: italic 600 var(--text-md)/1.3 var(--font-serif); color: var(--color-ink); text-shadow: 0 1px 2px #000, 0 0 10px #000; pointer-events: none; }
+.page-lantern-mobile .ll-summary { position: absolute; inset: 0; margin: 0; padding: var(--space-lg) var(--space-md); background: rgba(8, 6, 11, 0.92); border: 0; }
+.page-lantern-mobile .ll-summary h3 { font-size: var(--text-2xl); }
+.page-lantern-mobile .ll-summary dl > div { font-size: var(--text-md); }
+.page-lantern-mobile .ll-summary__note { display: block; }
+
+/* thumb-sized controls under the picture */
+.llm-controls { display: grid; gap: 6px; padding-top: 8px; }
+.llm-aim { position: absolute; bottom: 8px; z-index: 3; width: 48px; height: 48px; display: grid; place-items: center; padding: 0 0 4px; border: 1px solid oklch(62% 0.1 80 / 0.8); border-radius: 50%; background: rgba(16, 13, 22, 0.8); color: var(--color-accent); font: 600 1.75rem/1 var(--font-serif); cursor: pointer; }
+.llm-aim:active { transform: translateY(1px); background: #2a2431; }
+.llm-aim:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.llm-aim--prev { left: 8px; }
+.llm-aim--next { right: 8px; }
+.llm-battle:not(.is-playing) .llm-aim { display: none; }
+.page-lantern-mobile .ll-menu { position: static; width: auto; margin: 0; gap: 6px; }
+.page-lantern-mobile .ll-menu__hint { min-height: 2.6em; font-size: var(--text-md); text-shadow: none; color: var(--color-ink-2); }
+.page-lantern-mobile .ll-menu__list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.page-lantern-mobile .ll-slab { min-height: 50px; font-size: var(--text-sm); }
+.page-lantern-mobile .ll-slab__key { display: none; }
+.llm-battle:not(.is-playing) .ll-menu, .llm-battle:not(.is-playing) .ll-restart { display: none; }
+.page-lantern-mobile .ll-restart { justify-self: center; margin: 4px 0 0; }
+
+.llm-rules .head { font-size: var(--text-2xl); }
+.page-lantern-mobile .steps li { font-size: var(--text-md); grid-template-columns: 2.4rem minmax(0, 1fr); }
+.llm-costs { margin: var(--space-xl) 0 0; display: grid; }
+.llm-costs > div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: var(--space-sm); padding-block: var(--space-sm); border-top: 1px solid oklch(45% 0.07 80 / 0.5); }
+.llm-costs dt { font: 600 var(--text-sm)/1.5 var(--font-inscription); letter-spacing: 0.08em; color: var(--color-accent); }
+.llm-costs dd { margin: 0; color: var(--color-ink-2); line-height: 1.45; }
+.page-lantern-mobile .section { padding-block: var(--space-2xl); }
+.llm-full { margin-top: var(--space-lg); color: var(--color-ink-2); }
+.llm-full a { color: var(--color-accent); }
+.page-lantern-mobile .next a { padding-block: var(--space-2xl); }
 
 /* ---------- motion off ---------- */
 @media (prefers-reduced-motion: reduce) {

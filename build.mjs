@@ -155,15 +155,18 @@ const scripts = `<script>
 <script>window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(\`[data-slot="\${k}"]\`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
 document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });</script>`;
 
-for (const p of [...pages, { file: '404.html' }]) {
+for (const p of [...pages, { file: 'last-lantern-mobile.html', active: 'last-lantern.html' }, { file: '404.html' }]) {
   if (artifact && p.file === '404.html') continue;
   const src = read('src/' + p.file);
   const meta = (k) => (src.match(new RegExp(`<!--${k}: (.*?)-->`)) || [])[1] || '';
   const bodyClass = meta('body');
   const tick = '<svg class="tick" viewBox="0 0 24 24" role="img" aria-label="Included"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-  let body = src.replace(/<!--[a-z-]+(: .*?)?-->\n?/g, '').replace('@@NAV@@', nav(p.file)).replaceAll('@@TICK@@', tick);
+  let body = src.replace(/<!--[a-z-]+(: .*?)?-->\n?/g, '').replace('@@NAV@@', nav(p.active || p.file)).replaceAll('@@TICK@@', tick);
   if (artifact) body = body.replaceAll('href="index.html"', 'href="./"');
-  const head = `${meta('base') ? `<base href="${meta('base')}">\n` : ''}<title>${meta('title').replace('&', '&amp;')}</title>
+  const mobileTo = meta('mobile');
+  const phoneGate = mobileTo ? `<script>(function(){try{if(/[?&]full=1/.test(location.search)){sessionStorage.setItem('full-site','1');return}if(sessionStorage.getItem('full-site'))return}catch(e){}var u=navigator.userAgent,d=navigator.userAgentData;var phone=(d&&d.mobile)||/Android.+Mobile|iPhone|iPod|Windows Phone|Mobi/i.test(u)||(matchMedia('(pointer: coarse)').matches&&Math.min(screen.width,screen.height)<600);if(phone)location.replace('${mobileTo}'+location.hash)})();</script>\n<link rel="alternate" media="only screen and (max-width: 640px)" href="${siteUrl}${mobileTo}">\n` : '';
+  const canonical = meta('canonical') ? `<link rel="canonical" href="${siteUrl}${meta('canonical')}">\n` : '';
+  const head = `${phoneGate}${canonical}${meta('base') ? `<base href="${meta('base')}">\n` : ''}<title>${meta('title').replace('&', '&amp;')}</title>
 <meta name="description" content="${meta('desc').replace(/&/g, '&amp;')}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="${meta('title').replace('&', '&amp;')}">
