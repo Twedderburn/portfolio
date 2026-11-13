@@ -50,4 +50,8 @@ A script marks the download that matches the visitor's device (Android, Windows 
 
 The page is themed as a Gothic church at night. Its ornaments (rose window, arcade, tracery, lancet window, canopy and finial) are SVGs in `img/ll/` drawn by `node tools/gothic-art.cjs img/ll`; the demo draws its own stained-glass back wall.
 
+### On phones
+
+Phones get `last-lantern-mobile.html` (from `src/last-lantern-mobile.html`), a shorter page with a square battle, the HUD in HTML, aim arrows and thumb-sized commands. The `<!--mobile: ...-->` line in `src/last-lantern.html` makes the build add a small script to its head: a phone (by user agent, or a touch screen under 600px) is sent to the mobile page, keeping any `#demo`. Tablets and desktops stay. `?full=1` opens the full page on a phone for the rest of that visit. The mobile page is not in the nav, and its canonical link points at the full page. The same `js/last-lantern-battle.js` runs both; `data-layout="portrait"` picks the phone layout.
+
 Last Lantern is in development, so update its page as the game grows: new screenshots in `img/ll/`, and the rules and commands table in `src/last-lantern.html`.
