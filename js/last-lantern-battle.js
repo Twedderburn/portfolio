@@ -12,9 +12,9 @@
   const PORTRAIT = root.dataset.layout === 'portrait';
   const L = PORTRAIT
     ? { W: 540, H: 540, OX: 270, OY: 455, K: 1.05, SQ: 0.78, SPR: 1.55, WALL: 150, TS: 3, PIP: 12, HEAD: 99,
-        PACK: [[-128, 245], [-110, 165], [-90, 235], [-70, 150], [-52, 245]] }
+        PACK: [[-122, 235], [-90, 160], [-58, 235]] }
     : { W: 960, H: 540, OX: 385, OY: 285, K: 0.9, SQ: 0.78, SPR: 1.35, WALL: 124, TS: 2, PIP: 8, HEAD: 84,
-        PACK: [[-35, 250], [-17, 165], [5, 238], [27, 140], [47, 255]] };
+        PACK: [[-25, 235], [5, 160], [33, 245]] };
   const W = L.W, H = L.H;
   cv.width = W; cv.height = H;
   // world (game pixels, 48 to a tile) to canvas: the camera looks down at a slant
@@ -221,7 +221,7 @@
       spentFlame: 0, spentWick: 0, lastFlame: T.FLAME, lastWick: T.WICK,
       msg: '', msgUntil: 0, shake: 0, fx: [], pulse: 0, acted: null,
     };
-    S.target = S.foes[3];
+    S.target = S.foes[1]; // the nearest of the pack
     menu = 'root';
   }
 
